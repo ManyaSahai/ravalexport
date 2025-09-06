@@ -1,0 +1,1003 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ravel Exports Ltd.</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="images/Logo/favicon.png">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/dripicons.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* Navbar Dropdown Fix */
+        .main-menu .products-submenu {
+            width: 800px;
+            /* Wider dropdown */
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            /* 4 columns */
+            gap: 10px;
+            /* Space between columns */
+        }
+
+        .main-menu .products-submenu li {
+            width: 100%;
+        }
+
+        /* Director's Desk Section Styles */
+        .directors-section-wrapper {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .directors-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+
+        .section-title .underline {
+            width: 100px;
+            height: 4px;
+            margin: 0 auto;
+            border-radius: 2px;
+        }
+
+        .director-card {
+            background: linear-gradient(135deg, #fefefe 0%, #f7fafc 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .director-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .director-card .decorative-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #4338ca 0%, #f59e0b 100%);
+            transform: rotate(45deg);
+            transform-origin: 0 0;
+            margin-left: -40px;
+            margin-top: -40px;
+        }
+
+        .director-card .decorative-bottom {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #f59e0b 0%, #4338ca 100%);
+            transform: rotate(45deg);
+            transform-origin: 100% 100%;
+            margin-right: -50px;
+            margin-bottom: -50px;
+        }
+
+        .director-card .card-content {
+            padding: 50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .director-card .main-content {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .director-card .image-section {
+            position: relative;
+        }
+
+        .director-card .director-image {
+            width: 100%;
+            height: 320px;
+            border-radius: 16px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .director-card .director-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .director-card .name-badge {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .director-card .name-badge h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #2d3748;
+            text-align: center;
+            letter-spacing: 0.5px;
+            margin: 0;
+        }
+
+        .director-card .text-content {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .director-card .message {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #475569;
+            text-align: justify;
+        }
+
+        .director-card .quote-section {
+            position: relative;
+            background: linear-gradient(135deg, rgba(67, 56, 202, 0.03) 0%, rgba(245, 158, 11, 0.03) 100%);
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid;
+            border-image: linear-gradient(135deg, #4338ca 0%, #f59e0b 100%) 1;
+        }
+
+        .director-card .quote-icon-left {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 24px;
+            height: 24px;
+            opacity: 0.2;
+            fill: #4338ca;
+        }
+
+        .director-card .quote-icon-right {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            width: 24px;
+            height: 24px;
+            opacity: 0.2;
+            fill: #f59e0b;
+            transform: rotate(180deg);
+        }
+
+        .director-card .quote-text {
+            font-size: 16px;
+            font-weight: 500;
+            font-style: italic;
+            color: #2d3748;
+            text-align: center;
+            padding: 0 30px;
+            line-height: 1.5;
+        }
+
+        /* Timeline Section Styles */
+        .timeline-section-wrapper {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 80px 20px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .timeline-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .timeline-section {
+            position: relative;
+            height: 800px;
+            width: 900px;
+        }
+
+        .timeline-section .road-svg {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 800px;
+            z-index: 1;
+        }
+
+        .timeline-section .road-border {
+            fill: none;
+            stroke: #ff6b35;
+            stroke-width: 84;
+            stroke-linecap: round;
+            opacity: 0.3;
+        }
+
+        .timeline-section .road-path {
+            fill: none;
+            stroke: #34495e;
+            stroke-width: 80;
+            stroke-linecap: round;
+        }
+
+        .timeline-section .road-center-line {
+            fill: none;
+            stroke: white;
+            stroke-width: 4;
+            stroke-dasharray: 20, 15;
+            stroke-linecap: round;
+        }
+
+        .timeline-section .milestone {
+            position: absolute;
+            z-index: 10;
+        }
+
+        .timeline-section .year-circle {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #ff6b35, #f39c12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+            border: 3px solid white;
+            position: relative;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .timeline-section .year-circle::before {
+            content: '⌛';
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: white;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-section .content-box {
+            position: absolute;
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 280px;
+        }
+
+        .timeline-section .content-box.left-aligned {
+            border-right: 4px solid #ff6b35;
+        }
+
+        .timeline-section .content-box.right-aligned {
+            border-left: 4px solid #ff6b35;
+        }
+
+        .timeline-section .content-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #ff6b35;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .timeline-section .content-description {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .timeline-section .arrow {
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: #333;
+            z-index: 8;
+        }
+
+        .timeline-section .arrow.left::after {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: -3px;
+            width: 0;
+            height: 0;
+            border-right: 8px solid #333;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+
+        .timeline-section .arrow.right::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: -3px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid #333;
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+        }
+
+        .timeline-section .dots-pattern {
+            position: absolute;
+            top: 250px;
+            left: calc(50% + 250px);
+            width: 120px;
+            height: 120px;
+            background-image: radial-gradient(circle, #ddd 2px, transparent 2px);
+            background-size: 12px 12px;
+            opacity: 0.6;
+            z-index: 0;
+        }
+
+        /* Timeline Milestone Positions */
+        .milestone-1978 {
+            top: 80px;
+            left: calc(50% + 100px);
+        }
+
+        .content-1978 {
+            top: 70px;
+            left: calc(50% + 170px);
+        }
+
+        .arrow-1978 {
+            top: 115px;
+            left: calc(50% + 150px);
+        }
+
+        .milestone-1991 {
+            top: 180px;
+            left: calc(50% - 190px);
+        }
+
+        .content-1991 {
+            top: 170px;
+            left: calc(50% - 470px);
+        }
+
+        .arrow-1991 {
+            top: 215px;
+            left: calc(50% - 240px);
+        }
+
+        .milestone-2008 {
+            top: 280px;
+            left: calc(50% - 220px);
+        }
+
+        .content-2008 {
+            top: 270px;
+            left: calc(50% - 500px);
+        }
+
+        .arrow-2008 {
+            top: 315px;
+            left: calc(50% - 270px);
+        }
+
+        .milestone-diversified {
+            top: 380px;
+            left: calc(50% - 10px);
+        }
+
+        .content-diversified {
+            top: 370px;
+            left: calc(50% + 60px);
+        }
+
+        .arrow-diversified {
+            top: 415px;
+            left: calc(50% + 10px);
+        }
+
+        .milestone-2014 {
+            top: 480px;
+            left: calc(50% - 150px);
+        }
+
+        .content-2014 {
+            top: 470px;
+            left: calc(50% - 430px);
+        }
+
+        .arrow-2014 {
+            top: 515px;
+            left: calc(50% - 200px);
+        }
+
+        .milestone-2025 {
+            top: 580px;
+            left: calc(50% + 40px);
+        }
+
+        .content-2025 {
+            top: 570px;
+            left: calc(50% + 110px);
+        }
+
+        .arrow-2025 {
+            top: 615px;
+            left: calc(50% + 60px);
+        }
+
+        .milestone-2024 {
+            top: 700px;
+            left: calc(50% - 20px);
+        }
+
+        .content-2024 {
+            top: 690px;
+            left: calc(50% - 300px);
+        }
+
+        .arrow-2024 {
+            top: 735px;
+            left: calc(50% - 70px);
+        }
+
+        /* Animations */
+        .director-card {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .director-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .director-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .director-card .main-content {
+                grid-template-columns: 1fr;
+            }
+
+            .director-card .image-section {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .timeline-section .road-svg,
+            .timeline-section .arrow,
+            .timeline-section .dots-pattern {
+                display: none;
+            }
+
+            .timeline-container {
+                justify-content: flex-start;
+            }
+
+            .timeline-section {
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .timeline-section .milestone,
+            .timeline-section .content-box {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                width: 100%;
+                max-width: 400px;
+                text-align: center;
+                margin-bottom: 10px;
+            }
+
+            .timeline-section .content-box {
+                margin-bottom: 30px;
+                border-left: none;
+                border-right: none;
+                border-top: 4px solid #ff6b35;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-area header">
+        <div id="header-sticky" class="menu-area">
+            <div class="container-fluid pl-120 pr-120">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html"><img src="images/Logo/logo-1.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7">
+                            <div class="main-menu text-right">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li class="has-sub">
+                                            <a href="#">Products</a>
+                                            <ul class="products-submenu">
+                                                <li><a>Vegetables</a></li>
+                                                <li><a>Fruits</a></li>
+                                                <li><a>Pulp and concentrate</a></li>
+                                                <li><a>Food grains</a></li>
+                                                <li><a>Basmati rice</a></li>
+                                                <li><a>Rice</a></li>
+                                                <li><a>Wheat atta</a></li>
+                                                <li><a>Self packaged atta</a></li>
+                                                <li><a>Besan</a></li>
+                                                <li><a>Papads</a></li>
+                                                <li><a>Whole spices</a></li>
+                                                <li><a>Tea</a></li>
+                                                <li><a>Biscuits & Cookies</a></li>
+                                                <li><a>Beverages</a></li>
+                                                <li><a>Chips</a></li>
+                                                <li><a>Sweets</a></li>
+                                                <li><a>Pickles</a></li>
+                                                <li><a>Coffee</a></li>
+                                                <li><a>Cosmetics & Toiletries</a></li>
+                                                <li><a>Earthenware</a></li>
+                                                <li><a>Groceries</a></li>
+                                                <li><a>Salt</a></li>
+                                                <li><a>Ground spices</a></li>
+                                                <li><a>Mukhwas</a></li>
+                                                <li><a>Namkeen</a></li>
+                                                <li><a>Puja & Festival</a></li>
+                                                <li><a>Ready to eat</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="services.html">Services</a></li>
+                                        <li><a href="faq.html">Faq</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="directors-section-wrapper">
+            <div class="directors-section">
+                <div class="section-title">
+                    <h2>DIRECTOR’S DESK</h2>
+                    <div class="underline" style="background: linear-gradient(90deg, #4338ca 0%, #f59e0b 100%);"></div>
+                </div>
+
+                <div class="director-card">
+                    <div class="decorative-top"></div>
+                    <div class="decorative-bottom"></div>
+                    <div class="card-content">
+                        <div class="main-content">
+                            <div class="image-section">
+                                <div class="director-image">
+                                    <img src="img/DSC07811.JPG" alt="Director Ankit V. Raval">
+                                </div>
+                                <div class="name-badge">
+                                    <h3>ANKIT V. RAVAL</h3>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <p class="message">
+                                    At Raval Group, our vision has always been to create a seamless bridge between
+                                    businesses and global opportunities. Over the years, I’ve had the privilege to lead
+                                    our export division, particularly in the US, while driving the expansion of our food
+                                    and electronics exports worldwide. Our strength lies not only in our legacy of over
+                                    37 years but also in our commitment to delivering unmatched quality and efficiency
+                                    in every transaction. As we continue to evolve in the ever-changing global trade
+                                    landscape, my focus remains on innovation, trust, and building partnerships that
+                                    empower businesses globally.
+                                </p>
+                                <div class="quote-section">
+                                    <svg class="quote-icon-left" viewBox="0 0 24 24">
+                                        <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
+                                    </svg>
+                                    <svg class="quote-icon-right" viewBox="0 0 24 24">
+                                        <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
+                                    </svg>
+                                    <p class="quote-text">
+                                        Global trade is not just about moving products, it’s about building bridges of
+                                        trust, efficiency, and growth across borders.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="director-card">
+                    <div class="decorative-top"></div>
+                    <div class="decorative-bottom"></div>
+                    <div class="card-content">
+                        <div class="main-content">
+                            <div class="image-section">
+                                <div class="director-image">
+                                    <img src="img/DSC07832.JPG" alt="Director Purav J. Raval">
+                                </div>
+                                <div class="name-badge">
+                                    <h3>PURAV J. RAVAL</h3>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <p class="message">
+                                    At Raval Group, we take pride in being a trusted partner across multiple
+                                    international markets including the UK, UAE, New Zealand, and Canada. My role has
+                                    been to nurture and grow these regions by ensuring that every shipment, every
+                                    partnership, and every opportunity reflects our promise of quality and reliability.
+                                    The global trade ecosystem is rapidly changing, and we are committed to staying
+                                    ahead — simplifying supply chains, introducing smarter solutions, and building
+                                    strong relationships that drive growth for our partners in every market we serve.
+                                </p>
+                                <div class="quote-section">
+                                    <svg class="quote-icon-left" viewBox="0 0 24 24">
+                                        <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
+                                    </svg>
+                                    <svg class="quote-icon-right" viewBox="0 0 24 24">
+                                        <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
+                                    </svg>
+                                    <p class="quote-text">
+                                        Strong partnerships and consistent quality are the cornerstones of building
+                                        lasting global relationships.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="director-card">
+                    <div class="decorative-top"></div>
+                    <div class="decorative-bottom"></div>
+                    <div class="card-content">
+                        <div class="main-content">
+                            <div class="image-section">
+                                <div class="director-image">
+                                    <img src="img/DSC07816.JPG" alt="Director Anurag Tiwari">
+                                </div>
+                                <div class="name-badge">
+                                    <h3>ANURAG TIWARI</h3>
+                                </div>
+                            </div>
+                            <div class="text-content">
+                                <p class="message">
+                                    Electronics exports and India’s B2B landscape are at the heart of innovation and
+                                    rapid growth, and at Raval Group, we’ve positioned ourselves to lead this
+                                    transformation. Overseeing the electronics export division and our expansive B2B
+                                    network in India, my focus has been to integrate technology, efficiency, and
+                                    reliability into every layer of our operations. With a trusted network of over 1,000
+                                    partners and decades of expertise, we remain committed to empowering businesses with
+                                    solutions that are seamless, scalable, and future-ready.
+                                </p>
+                                <div class="quote-section">
+                                    <svg class="quote-icon-left" viewBox="0 0 24 24">
+                                        <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
+                                    </svg>
+                                    <svg class="quote-icon-right" viewBox="0 0 24 24">
+                                        <path d="M14,17H17L19,13V7H13V13H16M6,17H9L11,13V7H5V13H8L6,17Z" />
+                                    </svg>
+                                    <p class="quote-text">
+                                        Innovation drives progress, but reliability sustains it, that’s the balance we
+                                        bring to every business we empower.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section-wrapper">
+            <div class="section-title">
+                <h2>COMPANY HISTORY</h2>
+                <div class="underline" style="background: linear-gradient(90deg, #2c5aa0 0%, #ff6b35 100%);"></div>
+            </div>
+            <div class="timeline-container">
+                <div class="timeline-section">
+                    <svg class="road-svg" viewBox="0 0 600 800">
+                        <path class="road-border"
+                            d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
+                        <path class="road-path"
+                            d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
+                        <path class="road-center-line"
+                            d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
+                    </svg>
+
+                    <div class="milestone milestone-1978">
+                        <div class="year-circle">1978</div>
+                    </div>
+                    <div class="content-box content-1978 right-aligned">
+                        <div class="content-title">Year of Establishment</div>
+                        <div class="content-description">First company: Chanda Vanaspati Oil</div>
+                    </div>
+                    <div class="arrow arrow-1978 right"></div>
+
+                    <div class="milestone milestone-1991">
+                        <div class="year-circle">1991</div>
+                    </div>
+                    <div class="content-box content-1991 left-aligned">
+                        <div class="content-title">Major Company</div>
+                        <div class="content-description">Hindustan Unilever, Area: Central Bombay</div>
+                    </div>
+                    <div class="arrow arrow-1991 left"></div>
+
+                    <div class="milestone milestone-2008">
+                        <div class="year-circle">2001<br>-2008</div>
+                    </div>
+                    <div class="content-box content-2008 left-aligned">
+                        <div class="content-title">Strategic Association</div>
+                        <div class="content-description">Marico International, Area: Central Bombay</div>
+                    </div>
+                    <div class="arrow arrow-2008 left"></div>
+
+                    <div class="milestone milestone-diversified">
+                        <div class="year-circle">2009<br>-2011</div>
+                    </div>
+                    <div class="content-box content-diversified right-aligned">
+                        <div class="content-title">Diversified Engagements</div>
+                        <div class="content-description">Garnier L'Oréal and Idea Telecommunication</div>
+                    </div>
+                    <div class="arrow arrow-diversified right"></div>
+
+                    <div class="milestone milestone-2014">
+                        <div class="year-circle">2011<br>-2014</div>
+                    </div>
+                    <div class="content-box content-2014 left-aligned">
+                        <div class="content-title">Key Distribution Partnership</div>
+                        <div class="content-description">Hindustan Coca-Cola, Area: Navi Mumbai</div>
+                    </div>
+                    <div class="arrow arrow-2014 left"></div>
+
+                    <div class="milestone milestone-2025">
+                        <div class="year-circle">2015<br>-2025</div>
+                    </div>
+                    <div class="content-box content-2025 right-aligned">
+                        <div class="content-title">Global Expansion</div>
+                        <div class="content-description">Export business to US, UK, Australia, NZ, UAE, Canada</div>
+                    </div>
+                    <div class="arrow arrow-2025 right"></div>
+
+                    <div class="milestone milestone-2024">
+                        <div class="year-circle">2024</div>
+                    </div>
+                    <div class="content-box content-2024 left-aligned">
+                        <div class="content-title">New Venture</div>
+                        <div class="content-description">Commencement of Electronic Exports</div>
+                    </div>
+                    <div class="arrow arrow-2024 left"></div>
+
+                    <div class="dots-pattern"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/paroller.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/js_isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+<footer class="footer-bg footer-p">
+    <div class="footer-top  pt-90 pb-40" style="background: linear-gradient(135deg, #d3d3d3, #a9a9a9);">
+        <div class="container">
+            <div class="row justify-content-between">
+
+
+                <div class="col-xl-4 col-lg-4 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title mb-30">
+                            <img src="images/Logo/logo-1.png" alt="img">
+                        </div>
+                        <div class="f-contact">
+                            <ul>
+                                <li>
+                                    <i class="icon fal fa-map-marker-check"></i>
+                                    <span>TTC IND. AREA, D-304, Turbhe MIDC, Turbhe, Navi Mumbai,
+                                        Maharashtra 400703</span>
+                                </li>
+                                <li>
+                                    <i class="icon fal fa-phone"></i>
+                                    <span>+91-9819607311</span>
+                                </li>
+                                <li><i class="icon fal fa-envelope"></i>
+                                    <span>
+                                        <a href="mailto:info@example.com">info@example.com</a>
+                                        <br>
+                                        <a href="mailto:help@example.com">help@example.com</a>
+                                    </span>
+                                </li>
+
+
+                            </ul>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2 col-lg-2 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title">
+                            <h2>Our Links</h2>
+                        </div>
+                        <div class="footer-link">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="about.html"> About Us</a></li>
+                                <li><a href="services.html"> Services </a></li>
+                                <li><a href="contact.html"> Contact Us</a></li>
+                                <li><a href="blog.html">Blog </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="f-widget-title">
+                                <h2>Latest Post</h2>
+                            </div>
+                            <div class="recent-blog-footer">
+                                <ul>
+                                    <li>
+                                        <div class="text"> <a href="blog-details.html">Fusce accumsan sagittis libero
+                                                tincidunt tempor finibus nec tristique orci.</a>
+                                            <span>7 March, 2023</span></div>
+                                    </li>
+
+                                    <li>
+                                        <div class="text"> <a href="blog-details.html">Curabitur sagittis libero
+                                                tincidunt tempor finibus nec tristique orci.</a>
+                                            <span>7 March, 2023</span></div>
+                                    </li>
+
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div> -->
+                <div class="col-xl-3 col-lg-3 col-sm-6">
+                    <div class="footer-widget mb-30">
+                        <div class="f-widget-title">
+                            <h2>Subscribe Now ! </h2>
+                        </div>
+                        <div class="footer-link">
+                            <div class="subricbe p-relative" data-animation="fadeInDown" data-delay=".4s">
+                                <form action="https://htmldemo.zcubethemes.com/logista/news-mail.php" method="post"
+                                    class="contact-form ">
+                                    <input type="text" id="email2" name="email2" class="header-input"
+                                        placeholder="Your Email..." required>
+                                    <button class="btn header-btn"> <i class="fas fa-location-arrow"></i> </button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="footer-social mt-30">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="copyright-wrap">
+        <div class="container">
+            <div class="row align-items-center text-center">
+                <div class="col-lg-12 col-md-12">
+                    Copyright &copy; Raval Exports 2025 . All rights reserved.
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer-end -->
+<!-- JS here -->
+<script src="js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="js/vendor/jquery-3.6.0.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/ajax-form.js"></script>
+<script src="js/paroller.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/js_isotope.pkgd.min.js"></script>
+<script src="js/imagesloaded.min.js"></script>
+<script src="js/parallax.min.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/jquery.counterup.min.js"></script>
+<script src="js/jquery.scrollUp.min.js"></script>
+<script src="js/jquery.meanmenu.min.js"></script>
+<script src="js/parallax-scroll.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/element-in-view.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+<!-- Mirrored from htmldemo.zcubethemes.com/logista/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Aug 2025 10:51:12 GMT -->
+
+</html>
