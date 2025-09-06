@@ -267,7 +267,7 @@
                     <div class="col-lg-6 col-md-12 col-sm-12">
                         <div class="s-about-img p-relative  wow fadeInLeft animated" data-animation="fadeInLeft"
                             data-delay=".4s">
-                            <img src="img/ravalogo.jpg" alt="img">
+                            <img src="img/ravallogo.png" alt="img">
                         </div>
 
                     </div>
@@ -284,26 +284,27 @@
                                 utensils, and regional specialties across global markets.
                             </p>
                             <p>Our commitment lies in providing customized solutions, competitive pricing, and efficient
-                                delivery — ensuring value, quality, and reliability in every shipment. At RTC, we don’t
+                                delivery — ensuring value, quality, and reliability in every shipment. At RTC, we don't
                                 just export products, we build long-term partnerships based on trust and service
                                 excellence.</p>
                             <div class="about-content3 mt-30">
                                 <div class="row justify-content-center align-items-center">
-                                    <div class="col-md-6">
-                                        <!-- <div class="slider-btn">
-                                            <a href="about.html" class="btn ss-btn smoth-scroll">Discover More</a>
-                                        </div> -->
-                                    </div>
-                                    <div class="col-md-6 text-right">
-                                        <!-- <div class="signature">
-                                            <img src="img/features/signature.png" alt="img">
-                                        </div> -->
+                                    <!-- Removed the empty column that was taking up space -->
+                                    <div class="col-md-12 text-left"> <!-- Changed from col-md-6 text-right -->
                                         <div class="read-more-section">
                                             <div class="slider-btn">
                                                 <a href="#" class="btn left-aligned-btn smoth-scroll">Read More</a>
                                             </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
@@ -319,40 +320,114 @@
         </script>
 
         <style>
-            .read-more-section {
-                text-align: left;
-                margin-left: -50px;
+            /* Override any existing alignment styles */
+            .rtc-button-wrapper {
+                text-align: left !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: block !important;
             }
 
-            .left-aligned-btn {
-                background-color: #ff7d44;
-                color: white;
-                border: 2px solid #ff7d44;
-                padding: 12px 30px;
-                font-size: 1rem;
-                font-weight: 600;
-                text-decoration: none;
-                border-radius: 5px;
-                transition: all 0.3s ease;
-                display: inline-block;
+            .rtc-button-container {
+                text-align: left !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                display: inline-block !important;
             }
 
-            .left-aligned-btn:hover {
-                background-color: transparent;
-                color: #ff7d44;
+            .rtc-read-more-button.rtc-orange-button {
+                background-color: #ff7d44 !important;
+                color: white !important;
+                border: 2px solid #ff7d44 !important;
+                padding: 12px 30px !important;
+                font-size: 1rem !important;
+                font-weight: 600 !important;
+                text-decoration: none !important;
+                border-radius: 5px !important;
+                transition: all 0.3s ease !important;
+                display: inline-block !important;
+                margin: 0 !important;
+                float: none !important;
+            }
+
+            .rtc-read-more-button.rtc-orange-button:hover {
+                background-color: transparent !important;
+                color: #ff7d44 !important;
+                border: 2px solid #ff7d44 !important;
+            }
+
+            /* Additional styling for layout */
+            .rtc-margin-top {
+                margin-top: 30px;
+            }
+
+            .rtc-column-large {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+
+            .rtc-column-medium {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .rtc-column-small {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+
+            .rtc-container {
+                width: 100%;
+                padding-right: 15px;
+                padding-left: 15px;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            .rtc-row {
+                display: flex;
+                flex-wrap: wrap;
+                margin-right: -15px;
+                margin-left: -15px;
+            }
+
+            .rtc-justify-center {
+                justify-content: center;
+            }
+
+            .rtc-align-center {
+                align-items: center;
+            }
+
+            .rtc-padding-left {
+                padding-left: 30px;
+            }
+
+            .rtc-about-area {
+                position: relative;
+            }
+
+            .rtc-top-padding {
+                padding-top: 120px;
+            }
+
+            .rtc-bottom-padding {
+                padding-bottom: 120px;
+            }
+
+            .rtc-position-relative {
+                position: relative;
+            }
+
+            .rtc-bottom-margin {
+                padding-bottom: 25px;
+            }
+
+            /* Ensure the button aligns to the left */
+            .text-left {
+                text-align: left !important;
             }
         </style>
-        </div>
-
-        </div>
-        </div>
-
-        </div>
-        </div>
-
-        </div>
-        </div>
-        </section>
         <!-- about-area-end -->
         <!-- counter-area -->
         <!-- <div class="counter-area p-relative">
