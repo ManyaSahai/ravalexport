@@ -1,0 +1,482 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ravel Exports Ltd. </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="images/Logo/favicon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/dripicons.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styling & Setup */
+        :root {
+            --primary-color: #ff7d44;
+            --secondary-color: #3763eb;
+            --text-color: #4a4a4a;
+            --bg-color: #f9faff;
+            --card-bg: #ffffff;
+            --shadow-color: rgba(55, 99, 235, 0.15);
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* Applying the new font and background to the body */
+        .brands-section-body {
+            font-family: var(--font-family);
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle, rgba(230, 235, 255, 0.5) 1px, transparent 1px);
+            background-size: 20px 20px;
+            color: var(--text-color);
+            padding: 50px 20px;
+        }
+
+        .brands-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header Section Styling */
+        .brands-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .main-title {
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            color: #6c757d;
+            font-size: 1.15rem;
+            font-weight: 300;
+            max-width: 650px;
+            margin: 20px auto 0;
+            line-height: 1.7;
+        }
+
+        .decorative-line {
+            width: 80px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        /* Brands Grid Layout */
+        .brands-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        /* Keyframe Animation for card loading */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Brand Card Styling */
+        .brand-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px var(--shadow-color);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            border: 2px solid transparent;
+            min-height: 160px;
+            opacity: 0;
+            /* Start hidden for animation */
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Staggered animation delay for each card */
+        .brand-card:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .brand-card:nth-child(2) {
+            animation-delay: 0.15s;
+        }
+
+        .brand-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .brand-card:nth-child(4) {
+            animation-delay: 0.25s;
+        }
+
+        .brand-card:nth-child(5) {
+            animation-delay: 0.3s;
+        }
+
+        .brand-card:nth-child(6) {
+            animation-delay: 0.35s;
+        }
+
+        /* Add more if needed */
+
+
+        .brand-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px var(--shadow-color);
+            border-image: linear-gradient(to right, var(--primary-color), var(--secondary-color)) 1;
+        }
+
+        /* Brand Logo Image Styling */
+        .brand-card img {
+            max-width: 80%;
+            max-height: 80px;
+            height: auto;
+
+
+        }
+
+        .brand-card:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 768px) {
+            .brands-section-body {
+                padding: 40px 15px;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .brand-card {
+                min-height: 120px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-area header">
+        <div id="header-sticky" class="menu-area">
+            <div class="container-fluid pl-120 pr-120">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html"><img src="images/Logo/logo-1.png" alt="logo"></a>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7">
+                            <div class="main-menu text-right">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li class="has-sub"><a href="index.html">Home</a></li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li class="has-sub">
+                                            <a href="">Products </a>
+                                            <ul class="products-submenu">
+                                                <li><a>Vegetables</a></li>
+                                                <li><a>Fruits</a></li>
+                                                <li><a>Pulp and concentrate</a></li>
+                                                <li><a>Food grains</a></li>
+                                                <li><a>Basmati rice</a></li>
+                                                <li><a>Rice</a></li>
+                                                <li><a>Wheat atta</a></li>
+                                                <li><a>Self packaged atta</a></li>
+                                                <li><a>Besan</a></li>
+                                                <li><a>Papads</a></li>
+                                                <li><a>Whole spices</a></li>
+                                                <li><a>Tea</a></li>
+                                                <li><a>Biscuits & Cookies</a></li>
+                                                <li><a>Beverages</a></li>
+                                                <li><a>Chips</a></li>
+                                                <li><a>Sweets</a></li>
+                                                <li><a>Pickles</a></li>
+                                                <li><a>Coffee</a></li>
+                                                <li><a>Cosmetics & Toiletries</a></li>
+                                                <li><a href="contact.html">Earthenware</a></li>
+                                                <li><a>Groceries</a></li>
+                                                <li><a>Salt</a></li>
+                                                <li><a>Ground spices</a></li>
+                                                <li><a>Mukhwas</a></li>
+                                                <li><a>Namkeen</a></li>
+                                                <li><a>Puja & Festival</a></li>
+                                                <li><a>Ready to eat</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub"><a href="services.html">Services</a></li>
+                                        <li><a href="brands.html">Brands</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="offcanvas-menu">
+        <span class="menu-close"><i class="fas fa-times"></i></span>
+        <form role="search" method="get" id="searchform" class="searchform"
+            action="http://wordpress.zcube.in/xconsulta/">
+            <input type="text" name="s" id="search" placeholder="Search" />
+            <button><i class="fa fa-search"></i></button>
+        </form>
+        <div id="cssmenu3" class="menu-one-page-menu-container">
+            <ul class="menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="index.html">Home</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="about.html">About Us</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="products.html">Products
+                    </a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="services.html">Services</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="brands.html">Brands </a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="contact.html">Contact us
+                    </a></li>
+            </ul>
+        </div>
+        <div id="cssmenu2" class="menu-one-page-menu-container">
+            <ul id="menu-one-page-menu-12" class="menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#home"><span>+8 12
+                            3456897</span></a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a
+                        href="#howitwork"><span>info@example.com</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="offcanvas-overly"></div>
+    <main>
+        <div class="brands-section-body">
+            <div class="brands-container">
+                <div class="brands-header">
+                    <h1 class="main-title">Brands We Deal In</h1>
+                    <div class="decorative-line"></div>
+                    <p class="subtitle">Partnering with industry leaders to bring you the finest products and services
+                        from around the globe.</p>
+                </div>
+
+                <div class="brands-grid">
+                    <div class="brand-card"><img src="img/brand/1-1.jpg" alt="Brand Logo 1"></div>
+                    <div class="brand-card"><img src="img/brand/2-2.jpg" alt="Brand Logo 2"></div>
+                    <div class="brand-card"><img src="img/brand/3-2.jpg" alt="Brand Logo 3"></div>
+                    <div class="brand-card"><img src="img/brand/4-2.jpg" alt="Brand Logo 4"></div>
+                    <div class="brand-card"><img src="img/brand/5-2.jpg" alt="Brand Logo 5"></div>
+                    <div class="brand-card"><img src="img/brand/7-2.jpg" alt="Brand Logo 7"></div>
+                    <div class="brand-card"><img src="img/brand/8-2.jpg" alt="Brand Logo 8"></div>
+                    <div class="brand-card"><img src="img/brand/9.jpg" alt="Brand Logo 9"></div>
+                    <div class="brand-card"><img src="img/brand/10.jpg" alt="Brand Logo 10"></div>
+                    <div class="brand-card"><img src="img/brand/11.jpg" alt="Brand Logo 11"></div>
+                    <div class="brand-card"><img src="img/brand/12.jpg" alt="Brand Logo 12"></div>
+                    <div class="brand-card"><img src="img/brand/13.jpg" alt="Brand Logo 13"></div>
+                    <div class="brand-card"><img src="img/brand/14.jpg" alt="Brand Logo 14"></div>
+                    <div class="brand-card"><img src="img/brand/15.jpg" alt="Brand Logo 15"></div>
+                    <div class="brand-card"><img src="img/brand/16.jpg" alt="Brand Logo 16"></div>
+                    <div class="brand-card"><img src="img/brand/17.jpg" alt="Brand Logo 17"></div>
+                    <div class="brand-card"><img src="img/brand/18.jpg" alt="Brand Logo 18"></div>
+                    <div class="brand-card"><img src="img/brand/19.jpg" alt="Brand Logo 19"></div>
+                    <div class="brand-card"><img src="img/brand/20.jpg" alt="Brand Logo 20"></div>
+                    <div class="brand-card"><img src="img/brand/21.jpg" alt="Brand Logo 21"></div>
+                    <div class="brand-card"><img src="img/brand/22.jpg" alt="Brand Logo 22"></div>
+                    <div class="brand-card"><img src="img/brand/23.jpg" alt="Brand Logo 23"></div>
+                    <div class="brand-card"><img src="img/brand/24.jpg" alt="Brand Logo 24"></div>
+                    <div class="brand-card"><img src="img/brand/26.jpg" alt="Brand Logo 26"></div>
+                    <div class="brand-card"><img src="img/brand/27.jpg" alt="Brand Logo 27"></div>
+                    <div class="brand-card"><img src="img/brand/28.jpg" alt="Brand Logo 28"></div>
+                    <div class="brand-card"><img src="img/brand/29.jpg" alt="Brand Logo 29"></div>
+                    <div class="brand-card"><img src="img/brand/30.jpg" alt="Brand Logo 30"></div>
+                    <div class="brand-card"><img src="img/brand/31.jpg" alt="Brand Logo 31"></div>
+                    <div class="brand-card"><img src="img/brand/32.jpg" alt="Brand Logo 32"></div>
+                    <div class="brand-card"><img src="img/brand/33.jpg" alt="Brand Logo 33"></div>
+                    <div class="brand-card"><img src="img/brand/34.jpg" alt="Brand Logo 34"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer-bg footer-p">
+        <div class="footer-top  pt-90 pb-40" style="background: linear-gradient(135deg, #d3d3d3, #a9a9a9);">
+            <div class="container">
+                <div class="row justify-content-between">
+
+
+                    <div class="col-xl-4 col-lg-4 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="f-widget-title mb-30">
+                                <img src="images/Logo/logo-1.png" alt="img">
+                            </div>
+                            <div class="f-contact">
+                                <ul>
+                                    <li>
+                                        <i class="icon fal fa-map-marker-check"></i>
+                                        <span>TTC IND. AREA, D-304, Turbhe MIDC, Turbhe, Navi Mumbai,
+                                            Maharashtra 400703</span>
+                                    </li>
+                                    <li>
+                                        <i class="icon fal fa-phone"></i>
+                                        <span>+91-9819607311</span>
+                                    </li>
+                                    <li><i class="icon fal fa-envelope"></i>
+                                        <span>
+                                            <a href="mailto:info@example.com">info@example.com</a>
+                                            <br>
+                                            <a href="mailto:help@example.com">help@example.com</a>
+                                        </span>
+                                    </li>
+
+
+                                </ul>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 col-lg-2 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="f-widget-title">
+                                <h2>Our Links</h2>
+                            </div>
+                            <div class="footer-link">
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html"> About Us</a></li>
+                                    <li><a href="services.html"> Services </a></li>
+                                    <li><a href="contact.html"> Contact Us</a></li>
+                                    <li><a href="blog.html">Blog </a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="f-widget-title">
+                                <h2>Latest Post</h2>
+                            </div>
+                            <div class="recent-blog-footer">
+                                <ul>
+                                    <li>
+                                        <div class="text"> <a href="blog-details.html">Fusce accumsan sagittis libero
+                                                tincidunt tempor finibus nec tristique orci.</a>
+                                            <span>7 March, 2023</span></div>
+                                    </li>
+
+                                    <li>
+                                        <div class="text"> <a href="blog-details.html">Curabitur sagittis libero
+                                                tincidunt tempor finibus nec tristique orci.</a>
+                                            <span>7 March, 2023</span></div>
+                                    </li>
+
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="col-xl-3 col-lg-3 col-sm-6">
+                        <div class="footer-widget mb-30">
+                            <div class="f-widget-title">
+                                <h2>Subscribe Now ! </h2>
+                            </div>
+                            <div class="footer-link">
+                                <div class="subricbe p-relative" data-animation="fadeInDown" data-delay=".4s">
+                                    <form action="https://htmldemo.zcubethemes.com/logista/news-mail.php" method="post"
+                                        class="contact-form ">
+                                        <input type="text" id="email2" name="email2" class="header-input"
+                                            placeholder="Your Email..." required>
+                                        <button class="btn header-btn"> <i class="fas fa-location-arrow"></i> </button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="footer-social mt-30">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="row align-items-center text-center">
+                    <div class="col-lg-12 col-md-12">
+                        Copyright &copy; Raval Exports 2025 . All rights reserved.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-end -->
+    <!-- JS here -->
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/paroller.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/js_isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/parallax-scroll.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/element-in-view.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+
+</html>
