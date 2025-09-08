@@ -768,104 +768,336 @@
             </div>
         </section>
 
-        <section class="timeline-section-wrapper">
-            <div class="section-title">
-                <h2>COMPANY HISTORY</h2>
-                <div class="underline" style="background: linear-gradient(90deg, #2c5aa0 0%, #ff6b35 100%);"></div>
-            </div>
-            <div class="timeline-container">
-                <div class="timeline-section">
-                    <svg class="road-svg" viewBox="0 0 600 800">
-                        <path class="road-border"
-                            d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
-                        <path class="road-path"
-                            d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
-                        <path class="road-center-line"
-                            d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
-                    </svg>
+        <!DOCTYPE html>
+        <html lang="en">
 
-                    <div class="milestone milestone-1978">
-                        <div class="year-circle">1978</div>
-                    </div>
-                    <div class="content-box content-1978 right-aligned">
-                        <div class="content-title">Year of Establishment</div>
-                        <div class="content-description">First company: Chanda Vanaspati Oil</div>
-                    </div>
-                    <div class="arrow arrow-1978 right"></div>
-
-                    <div class="milestone milestone-1991">
-                        <div class="year-circle">1991</div>
-                    </div>
-                    <div class="content-box content-1991 left-aligned">
-                        <div class="content-title">Major Company</div>
-                        <div class="content-description">Hindustan Unilever, Area: Central Bombay</div>
-                    </div>
-                    <div class="arrow arrow-1991 left"></div>
-
-                    <div class="milestone milestone-2008">
-                        <div class="year-circle">2001<br>-2008</div>
-                    </div>
-                    <div class="content-box content-2008 left-aligned">
-                        <div class="content-title">Strategic Association</div>
-                        <div class="content-description">Marico International, Area: Central Bombay</div>
-                    </div>
-                    <div class="arrow arrow-2008 left"></div>
-
-                    <div class="milestone milestone-diversified">
-                        <div class="year-circle">2009<br>-2011</div>
-                    </div>
-                    <div class="content-box content-diversified right-aligned">
-                        <div class="content-title">Diversified Engagements</div>
-                        <div class="content-description">Garnier L'Oréal and Idea Telecommunication</div>
-                    </div>
-                    <div class="arrow arrow-diversified right"></div>
-
-                    <div class="milestone milestone-2014">
-                        <div class="year-circle">2011<br>-2014</div>
-                    </div>
-                    <div class="content-box content-2014 left-aligned">
-                        <div class="content-title">Key Distribution Partnership</div>
-                        <div class="content-description">Hindustan Coca-Cola, Area: Navi Mumbai</div>
-                    </div>
-                    <div class="arrow arrow-2014 left"></div>
-
-                    <div class="milestone milestone-2025">
-                        <div class="year-circle">2015<br>-2025</div>
-                    </div>
-                    <div class="content-box content-2025 right-aligned">
-                        <div class="content-title">Global Expansion</div>
-                        <div class="content-description">Export business to US, UK, Australia, NZ, UAE, Canada</div>
-                    </div>
-                    <div class="arrow arrow-2025 right"></div>
-
-                    <div class="milestone milestone-2024">
-                        <div class="year-circle">2024</div>
-                    </div>
-                    <div class="content-box content-2024 left-aligned">
-                        <div class="content-title">New Venture</div>
-                        <div class="content-description">Commencement of Electronic Exports</div>
-                    </div>
-                    <div class="arrow arrow-2024 left"></div>
-
-                    <div class="timeline-end-card">
-                        <svg class="end-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z" />
-                        </svg>
-                        <h3>The Journey Continues...</h3>
-                        <p>Building on a legacy of trust, we look forward to a future of innovation and global
-                            partnership.</p>
-                    </div>
-                    <div class="dots-pattern"></div>
-                </div>
-            </div>
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Company History Timeline</title>
             <style>
-                .milestone::before,
-                .milestone::after {
-                    display: none;
+                .timeline-section-wrapper {
+                    padding: 50px 20px;
+                    background: #f8f9fa;
+                    font-family: 'Arial', sans-serif;
+                }
+
+                .section-title {
+                    text-align: center;
+                    margin-bottom: 50px;
+                }
+
+                .section-title h2 {
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    color: #2c5aa0;
+                    margin-bottom: 15px;
+                }
+
+                .underline {
+                    height: 4px;
+                    width: 100px;
+                    margin: 0 auto;
+                    background: linear-gradient(90deg, #2c5aa0 0%, #ff6b35 100%);
+                }
+
+                .timeline-container {
+                    position: relative;
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+
+                .timeline-section {
+                    position: relative;
+                    padding: 50px 0;
+                }
+
+                .road-svg {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 100%;
+                    height: 100%;
+                    z-index: 1;
+                }
+
+                .road-border {
+                    fill: none;
+                    stroke: #ccc;
+                    stroke-width: 8;
+                }
+
+                .road-path {
+                    fill: none;
+                    stroke: #e9ecef;
+                    stroke-width: 6;
+                }
+
+                .road-center-line {
+                    fill: none;
+                    stroke: #ff6b35;
+                    stroke-width: 2;
+                    stroke-dasharray: 10, 10;
+                }
+
+                .milestone {
+                    position: absolute;
+                    z-index: 10;
+                }
+
+                .milestone-circle {
+                    width: 120px;
+                    height: 120px;
+                    background: #ff6b35;
+                    border-radius: 50%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    color: white;
+                    font-weight: bold;
+                    box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+                    border: 4px solid white;
+                    text-align: center;
+                    padding: 10px;
+                    box-sizing: border-box;
+                }
+
+                .milestone-year {
+                    font-size: 14px;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                    line-height: 1.1;
+                }
+
+                .milestone-title {
+                    font-size: 11px;
+                    font-weight: 600;
+                    margin-bottom: 3px;
+                    line-height: 1.1;
+                }
+
+                .milestone-desc {
+                    font-size: 9px;
+                    font-weight: 400;
+                    line-height: 1.1;
+                    opacity: 0.9;
+                }
+
+                /* Positioning for each milestone */
+                .milestone-1978 {
+                    top: 50px;
+                    left: calc(53% - 0px);
+                }
+
+                .milestone-1991 {
+                    top: 150px;
+                    left: calc(50% - 160px);
+                }
+
+                .milestone-2008 {
+                    top: 250px;
+                    left: calc(50% - 200px);
+                }
+
+                .milestone-diversified {
+                    top: 350px;
+                    left: calc(40% + 0px);
+                }
+
+                .milestone-2014 {
+                    top: 450px;
+                    left: calc(50% - 145px);
+                }
+
+                .milestone-2025 {
+                    top: 550px;
+                    left: calc(47% + 0px);
+                }
+
+                .milestone-2024 {
+                    top: 650px;
+                    left: calc(50% - 60px);
+                }
+
+                .timeline-end-card {
+                    position: relative;
+                    z-index: 10;
+                    background: white;
+                    border-radius: 15px;
+                    padding: 30px;
+                    text-align: center;
+                    margin-top: 750px;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    border: 2px solid #ff6b35;
+                }
+
+                .end-card-icon {
+                    width: 50px;
+                    height: 50px;
+                    fill: #ff6b35;
+                    margin-bottom: 15px;
+                }
+
+                .timeline-end-card h3 {
+                    color: #2c5aa0;
+                    font-size: 1.5rem;
+                    margin-bottom: 10px;
+                }
+
+                .timeline-end-card p {
+                    color: #666;
+                    font-size: 1rem;
+                    line-height: 1.5;
+                }
+
+                .dots-pattern {
+                    position: absolute;
+                    bottom: -100px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 200px;
+                    height: 50px;
+                    background-image: radial-gradient(circle, #ff6b35 2px, transparent 2px);
+                    background-size: 20px 20px;
+                    opacity: 0.3;
+                }
+
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
+                    .milestone-circle {
+                        width: 100px;
+                        height: 100px;
+                        padding: 8px;
+                    }
+
+                    .milestone-year {
+                        font-size: 12px;
+                    }
+
+                    .milestone-title {
+                        font-size: 9px;
+                    }
+
+                    .milestone-desc {
+                        font-size: 8px;
+                    }
+
+                    .milestone-1991 {
+                        left: calc(50% - 140px);
+                    }
+
+                    .milestone-2008 {
+                        left: calc(50% - 160px);
+                    }
+
+                    .milestone-diversified {
+                        left: calc(50% + 20px);
+                    }
+
+                    .milestone-2025 {
+                        left: calc(50% + 60px);
+                    }
                 }
             </style>
-        </section>
+        </head>
 
+        <body>
+            <section class="timeline-section-wrapper">
+                <div class="section-title">
+                    <h2>COMPANY HISTORY</h2>
+                    <div class="underline" style="background: linear-gradient(90deg, #2c5aa0 0%, #ff6b35 100%);"></div>
+                </div>
+                <div class="timeline-container">
+                    <div class="timeline-section">
+                        <svg class="road-svg" viewBox="0 0 600 800">
+                            <path class="road-border"
+                                d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
+                            <path class="road-path"
+                                d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
+                            <path class="road-center-line"
+                                d="M 350 50 Q 400 120 320 180 Q 200 250 150 320 Q 100 380 200 450 Q 300 520 250 580 Q 200 640 300 700 Q 400 760 350 800" />
+                        </svg>
+
+                        <div class="milestone milestone-1978">
+                            <div class="milestone-circle">1978</div>
+                        </div>
+                        <div class="content-box content-1978 right-aligned">
+                            <div class="content-title">Year of Establishment</div>
+                            <div class="content-description">First company: Chanda Vanaspati Oil</div>
+                        </div>
+                        <div class="arrow arrow-1978 right"></div>
+
+                        <div class="milestone milestone-1991">
+                            <div class="milestone-circle">1991</div>
+                        </div>
+                        <div class="content-box content-1991 left-aligned">
+                            <div class="content-title">Major Company</div>
+                            <div class="content-description">Hindustan Unilever, Area: Central Bombay</div>
+                        </div>
+                        <div class="arrow arrow-1991 left"></div>
+
+                        <div class="milestone milestone-2008">
+                            <div class="milestone-circle">2001<br>-2008</div>
+                        </div>
+                        <div class="content-box content-2008 left-aligned">
+                            <div class="content-title">Strategic Association</div>
+                            <div class="content-description">Marico International, Area: Central Bombay</div>
+                        </div>
+                        <div class="arrow arrow-2008 left"></div>
+
+                        <div class="milestone milestone-diversified">
+                            <div class="milestone-circle">2009<br>-2011</div>
+                        </div>
+                        <div class="content-box content-diversified right-aligned">
+                            <div class="content-title">Diversified Engagements</div>
+                            <div class="content-description">Garnier L'Oréal and Idea Telecommunication</div>
+                        </div>
+                        <div class="arrow arrow-diversified right"></div>
+
+                        <div class="milestone milestone-2014">
+                            <div class="milestone-circle">2011<br>-2014</div>
+                        </div>
+                        <div class="content-box content-2014 left-aligned">
+                            <div class="content-title">Key Distribution Partnership</div>
+                            <div class="content-description">Hindustan Coca-Cola, Area: Navi Mumbai</div>
+                        </div>
+                        <div class="arrow arrow-2014 left"></div>
+
+                        <div class="milestone milestone-2025">
+                            <div class="milestone-circle">2015<br>-2025</div>
+                        </div>
+                        <div class="content-box content-2025 right-aligned">
+                            <div class="content-title">Global Expansion</div>
+                            <div class="content-description">Export business to US, UK, Australia, NZ, UAE, Canada</div>
+                        </div>
+                        <div class="arrow arrow-2025 right"></div>
+
+                        <div class="milestone milestone-2024">
+                            <div class="milestone-circle">2024</div>
+                        </div>
+                        <div class="content-box content-2024 left-aligned">
+                            <div class="content-title">New Venture</div>
+                            <div class="content-description">Commencement of Electronic Exports</div>
+                        </div>
+                        <div class="arrow arrow-2024 left"></div>
+
+                        <div class="timeline-end-card">
+                            <svg class="end-card-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M14.4,6L14,4H5V21H7V14H12.6L13,16H20V6H14.4Z" />
+                            </svg>
+                            <h3>The Journey Continues...</h3>
+                            <p>Building on a legacy of trust, we look forward to a future of innovation and global
+                                partnership.</p>
+                        </div>
+                        <div class="dots-pattern"></div>
+                    </div>
+                </div>
+            </section>
+        </body>
+
+        </html>
     </main>
     <script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-3.6.0.min.js"></script>
