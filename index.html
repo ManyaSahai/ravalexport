@@ -494,140 +494,178 @@
         </section>
         <!-- service-details2-area-end -->
         <!-- why-choose-area -->
-        <style>
-            /* Add this to your main CSS file or in a <style> block in your HTML head */
-            .feature-list-item {
-                display: flex;
-                align-items: center;
-                margin-bottom: 20px;
-                /* Space between items */
-            }
+        <!DOCTYPE html>
+        <html lang="en">
 
-            .feature-list-item .icon-wrapper {
-                flex-shrink: 0;
-                /* Prevent icon from shrinking */
-                width: 60px;
-                /* Size of the icon area */
-                height: 60px;
-                background-color: #ffffff;
-                /* White background for icon */
-                border-radius: 50%;
-                /* Circular background */
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-right: 20px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                /* Subtle shadow for depth */
-            }
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Why Choose Us Section</title>
 
-            .feature-list-item .icon {
-                font-size: 30px;
-                /* Size of the icon */
-                color: #1E4B9C;
-                /* Icon color */
-            }
+            <style>
+                .why-choose {
+                    padding: 120px 0;
+                    background: #F8F9FA;
+                }
 
-            .feature-list-item .text h5 {
-                margin: 0;
-                font-size: 18px;
-                color: #ffffff;
-                /* Text color */
-                line-height: 1.4;
-            }
+                .section-title h2 {
+                    color: #1E4B9C;
+                    font-weight: 700;
+                    margin-bottom: 20px;
+                }
 
-            /* Adjust the text column to prevent it from going too wide */
-            .why-choose .feature-content {
-                max-width: 500px;
-                /* Adjust as needed */
-                margin-right: auto;
-                /* Center or align left */
-            }
-        </style>
+                .section-title h2 span {
+                    color: #FF6B35;
+                }
 
-        <section class="why-choose p-relative fix pt-120 pb-120" style="background: #1E4B9C;">
-            <div class="container">
-                <div class="row justify-content-center align-items-center">
-                    <div class="col-lg-6 col-md-12 col-sm-12">
-                        <div class="feature-content s-about-content wow fadeInLeft animated" data-animation="fadeInLeft"
-                            data-delay=".4s">
-                            <div class="feature-title pb-20">
-                                <h2 style="color: #ffffff;">
-                                    Why Choose <span style="color: #cd8125;"> Us? </span>
-                                </h2>
+                .feature-content p {
+                    color: #666;
+                    line-height: 1.7;
+                    margin-bottom: 25px;
+                    /* Adjusted margin */
+                }
+
+                .why-choose-image {
+                    max-width: 100%;
+                    height: auto;
+                    border-radius: 12px;
+                    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease-in-out;
+                    margin-top: 20px;
+                    /* Adjusted margin */
+                }
+
+                .why-choose-image:hover {
+                    transform: scale(1.02);
+                }
+
+                .why-choose-us-box {
+                    border: 1px solid #e0e0e0;
+                    padding: 30px 20px;
+                    margin-bottom: 20px;
+                    background-color: #ffffff;
+                    text-align: center;
+                    transition: all 0.3s ease-in-out;
+                    min-height: 180px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 8px;
+                }
+
+                .why-choose-us-box:hover {
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                    transform: translateY(-5px);
+                }
+
+                .why-choose-us-box .icon {
+                    font-size: 40px;
+                    color: #555555;
+                    margin-bottom: 20px;
+                }
+
+                .why-choose-us-box h5 {
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #333333;
+                    margin: 0;
+                }
+
+                @media (max-width: 991px) {
+                    .feature-content {
+                        text-align: center;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .why-choose {
+                        padding: 60px 0;
+                    }
+
+                    .section-title h2 {
+                        font-size: 28px;
+                    }
+
+                    .why-choose-us-box {
+                        min-height: 150px;
+                        padding: 20px 15px;
+                    }
+                }
+            </style>
+        </head>
+
+        <body>
+            <section class="why-choose">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 text-center mb-5">
+                            <div class="section-title">
+                                <h2>WHY <span>CHOOSE US</span></h2>
                             </div>
-                            <p style="color: #ffffff;">
-                                We are exporting Indian spices, nuts and coir based products. Having ventured into the
-                                activity of export and import, the organization has emerged as one of the key players in
-                                exporting agro based commodities based on the requirement of clients
-                            </p>
+                        </div>
+                    </div>
 
-                            <div class="row mt-50">
-                                <div class="col-lg-12">
-                                    <div class="feature-list">
-                                        <div class="feature-list-item">
-                                            <div class="icon-wrapper">
-                                                <i class="fas fa-sync-alt icon"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h5>Process Driven</h5>
-                                            </div>
-                                        </div>
-                                        <div class="feature-list-item">
-                                            <div class="icon-wrapper">
-                                                <i class="fas fa-user-tie icon"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h5>Experienced in the Industry</h5>
-                                            </div>
-                                        </div>
-                                        <div class="feature-list-item">
-                                            <div class="icon-wrapper">
-                                                <i class="fas fa-handshake icon"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h5>Provide Customization as per requirements</h5>
-                                            </div>
-                                        </div>
-                                        <div class="feature-list-item">
-                                            <div class="icon-wrapper">
-                                                <i class="fas fa-shipping-fast icon"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h5>Prompt in Delivery Responsibilities</h5>
-                                            </div>
-                                        </div>
-                                        <div class="feature-list-item">
-                                            <div class="icon-wrapper">
-                                                <i class="fas fa-calculator icon"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h5>Easy on the Budget</h5>
-                                            </div>
-                                        </div>
-                                        <div class="feature-list-item">
-                                            <div class="icon-wrapper">
-                                                <i class="fas fa-shield-alt icon"></i>
-                                            </div>
-                                            <div class="text">
-                                                <h5>Service Quality Assurance</h5>
-                                            </div>
-                                        </div>
+                    <div class="row justify-content-center align-items-center">
+
+                        <div class="col-lg-6 mb-5 mb-lg-0">
+                            <div class="feature-content">
+                                <p>
+                                    We are exporting Indian spices, nuts and coir based products. Having ventured into
+                                    the activity of export and import, the organization has emerged as one of the key
+                                    players in exporting agro based commodities based on the requirement of clients.
+                                </p>
+                                <img src="img/whychooseus.png" alt="Why Choose Us" class="why-choose-image">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <div class="col-md-6 col-6">
+                                    <div class="why-choose-us-box">
+                                        <div class="icon"><i class="fas fa-sync-alt"></i></div>
+                                        <h5>Process Driven</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <div class="why-choose-us-box">
+                                        <div class="icon"><i class="fas fa-user-tie"></i></div>
+                                        <h5>Experienced</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <div class="why-choose-us-box">
+                                        <div class="icon"><i class="fas fa-handshake"></i></div>
+                                        <h5>Customization</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <div class="why-choose-us-box">
+                                        <div class="icon"><i class="fas fa-shipping-fast"></i></div>
+                                        <h5>Prompt Delivery</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <div class="why-choose-us-box">
+                                        <div class="icon"><i class="fas fa-calculator"></i></div>
+                                        <h5>Easy on Budget</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-6">
+                                    <div class="why-choose-us-box">
+                                        <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                                        <h5>Quality Assured</h5>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 pr-30">
-                        <div class="why-video wow fadeInRight animated" data-animation="fadeInRight" data-delay=".4s">
-                            <a>
-                                <img src="img/whychooseus.png" alt="img">
-                            </a>
-                        </div>
+
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </body>
+
+        </html>
         <!-- why-choose-area-end -->
         <!-- 
         <section class="step-area p-relative fix"
