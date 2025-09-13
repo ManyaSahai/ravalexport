@@ -1,8 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="zxx">
 
-<!-- Mirrored from htmldemo.zcubethemes.com/logista/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 29 Aug 2025 10:51:12 GMT -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -10,9 +8,6 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="images/Logo/favicon.png">
-    <!-- Place favicon.ico in the root directory -->
-
-    <!-- CSS here -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -26,7 +21,6 @@
 </head>
 
 <body>
-    <!-- header -->
     <header class="header-area header">
 
         <div id="header-sticky" class="menu-area">
@@ -90,37 +84,11 @@
                                         <li><a href="brands.html">Brands</a></li>
 
 
-                                        <!-- <li class="has-sub">
-                                            <a href="#">Pages</a>
-                                            <ul>
-                                                <li><a href="projects.html">Gallery</a></li>
-                                                <li><a href="pricing.html">Pricing</a></li>
-                                                <li><a href="team.html">Team</a></li>
-                                                <li><a href="faq.html">Faq</a></li>
-                                            </ul>
-                                        </li> -->
-                                        <!-- <li class="has-sub">
-                                            <a href="#">Blog</a>
-                                        </li> -->
                                         <li><a href="contact.html">Contact Us</a></li>
                                     </ul>
                                 </nav>
                             </div>
                         </div>
-                        <!-- <div class="col-xl-3 col-lg-3 d-none d-lg-block text-right">
-                            <div class="header-cta">
-                                <ul>
-                                    <li><a href="#" class="menu-tigger"><i class="fal fa-search"></i></a></li>
-                                    <li><a href="#" class="menu-tigger"><i class="fa-regular fa-bars-staggered"></i></a>
-                                    </li>
-                                    <li>
-                                        <a href="contact.html" class="top-btn">Get A Quote</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                        </div> -->
-
                         <div class="col-12">
                             <div class="mobile-menu"></div>
                         </div>
@@ -129,8 +97,6 @@
             </div>
         </div>
     </header>
-    <!-- header-end -->
-    <!-- offcanvas-area -->
     <div class="offcanvas-menu">
         <span class="menu-close"><i class="fas fa-times"></i></span>
         <form role="search" method="get" id="searchform" class="searchform"
@@ -153,10 +119,6 @@
                 </li>
                 <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="contact.html">Contact us
                     </a></li>
-                <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="projects.html">Cases
-                        Study</a></li> -->
-                <!-- <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="blog.html">Blog</a></li> -->
-
             </ul>
         </div>
         <div id="cssmenu2" class="menu-one-page-menu-container">
@@ -206,53 +168,55 @@
     <body>
 
         <div class="container mx-auto p-4 lg:p-8">
+
+            <div class="lg:hidden mb-4">
+                <button id="hamburger-btn"
+                    class="bg-[#1E4B9C] text-white p-2 rounded-md flex items-center gap-2 w-full justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <span class="font-semibold">Browse Categories</span>
+                </button>
+            </div>
+            <div id="sidebar-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden lg:hidden"></div>
+
+
             <div class="flex flex-col lg:flex-row gap-8">
 
-                <!-- Left Sidebar for Categories -->
-                <aside class="lg:w-1/4 w-full flex-shrink-0">
-                    <div class="bg-white p-6 rounded-lg shadow-md">
+                <aside
+                    class="fixed lg:relative inset-y-0 left-0 z-50 w-3/4 max-w-sm transform -translate-x-full transition-transform duration-300 ease-in-out lg:w-1/4 lg:transform-none lg:transition-none lg:inset-auto flex-shrink-0">
+                    <div class="bg-white p-6 rounded-lg shadow-md h-full relative overflow-y-auto">
+                        <button id="close-sidebar-btn"
+                            class="lg:hidden absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
                         <h2 class="text-xl font-bold text-[#1E4B9C] border-b pb-3 mb-4">Browse Categories</h2>
                         <ul class="space-y-2" id="category-menu">
-                            <!-- Categories will be dynamically inserted here by JavaScript -->
                         </ul>
                     </div>
                 </aside>
 
-                <!-- Right Content Area for Products -->
                 <main class="w-full">
-                    <!-- Header Bar -->
                     <div class="bg-[#1E4B9C] text-white flex flex-wrap items-center justify-between p-4 rounded-t-lg">
                         <h1 class="text-lg font-semibold" id="product-list-title"></h1>
                         <div class="flex items-center gap-1">
                             <button class="p-2 rounded-md hover:bg-white/20" aria-label="Grid View">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <rect x="3" y="3" width="7" height="7"></rect>
-                                    <rect x="14" y="3" width="7" height="7"></rect>
-                                    <rect x="14" y="14" width="7" height="7"></rect>
-                                    <rect x="3" y="14" width="7" height="7"></rect>
-                                </svg>
+
                             </button>
                             <button class="p-2 rounded-md bg-white/20" aria-label="List View">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                    stroke-linejoin="round">
-                                    <line x1="8" y1="6" x2="21" y2="6"></line>
-                                    <line x1="8" y1="12" x2="21" y2="12"></line>
-                                    <line x1="8" y1="18" x2="21" y2="18"></line>
-                                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
-                                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
-                                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
-                                </svg>
+
                             </button>
                         </div>
                     </div>
 
-                    <!-- Products Grid -->
                     <div class="bg-white p-6 rounded-b-lg shadow-md min-h-[400px]">
                         <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-                            <!-- Products will be dynamically inserted here by JavaScript -->
                         </div>
                         <div id="load-more-container" class="text-center mt-8">
                             <button id="load-more-btn"
@@ -616,6 +580,379 @@
                 { name: 'MUSTARD OIL', brand: 'TEZ', packaging: '5 LTR X 4 P.JAR (Per Carton)', shelfLife: '9 Months', subcategory: 'COOKING OIL', imageUrl: 'img/oil/43.jpg' },
                 { name: 'MUSTARD OIL', brand: 'TEZ', packaging: '500 ML X 32 P.BOTT (Per Carton)', shelfLife: '9 Months', subcategory: 'COOKING OIL', imageUrl: 'img/oil/44.jpg' },
                 { name: 'SEASAME OIL', brand: 'TIL SONA', packaging: '500 GM X 24 BOTT (Per Carton)', shelfLife: '12 Months', subcategory: 'COOKING OIL', imageUrl: 'img/oil/45.jpg' },
+
+                // Add these products to your allProducts array in the script tag
+
+                { name: 'POTATO SALLI', brand: 'AKSHAR', packaging: '200 GM X 40 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'FASTING PRODUCTS', imageUrl: 'img/fasting/1.jpg' },
+                {
+                    name: 'POTATO SALLI', brand: 'AKSHAR', packaging: '500 GM X 20 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'FASTING PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'PUFFED LOTUS SEED (MAKHANA)', brand: 'AKSHAR', packaging: '100 GM X 60 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'FASTING PRODUCTS', imageUrl: 'img/fasting/3.png' },
+                { name: 'PUFFED LOTUS SEED (MAKHANA)', brand: 'AKSHAR', packaging: '200 GM X 30 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'FASTING PRODUCTS', imageUrl: 'img/fasting/4.jpg' },
+                { name: 'SABUDANA (SAGO SEED)', brand: 'AKSHAR', packaging: '1 KG X 14 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'FASTING PRODUCTS', imageUrl: 'img/fasting/5.jpg' },
+                { name: 'SABUDANA (SAGO SEED)', brand: 'AKSHAR', packaging: '250 GM X 40 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'FASTING PRODUCTS', imageUrl: 'img/fasting/6.jpg' },
+                { name: 'SABUDANA (SAGO SEED)', brand: 'AKSHAR', packaging: '500 GM X 20 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'FASTING PRODUCTS', imageUrl: 'img/fasting/7.jpg' },
+                {
+                    name: 'WATER CHESTNUT FLOUR (SINGODA FLOUR)', brand: 'AKSHAR', packaging: '500 GM X 16 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'FASTING PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+
+                // Add these products to your allProducts array in the script tag
+
+                { name: 'AJI NO MOTO (MONOSODIUM GLUTAMATE)', brand: 'AKSHAR', packaging: '100 GM X 80 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/1.jpg' },
+                {
+                    name: 'ANARDANA SEED', brand: 'AKSHAR', packaging: '100 GM X 60 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'CARDAMOM POWDER', brand: 'AKSHAR', packaging: '100 GM X 70 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'CARDAMOM SEEDS', brand: 'AKSHAR', packaging: '50 GM X 50 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'CHIA SEED', brand: 'AKSHAR', packaging: '100 GM X 50 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'CHIA SEED', brand: 'AKSHAR', packaging: '200 GM X 25 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/6.png' },
+                {
+                    name: 'CHIA SEED', brand: 'AKSHAR', packaging: '500 GM X 20 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'CORN FLAKES (MAKAI POHA)', brand: 'AKSHAR', packaging: '200 GM X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/8.jpg' },
+                {
+                    name: 'CORN FLAKES (MAKAI POHA)', brand: 'AKSHAR', packaging: '500 GM X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'EDIBLE GUM - GOND KATIRA', brand: 'AKSHAR', packaging: '100 GM X 80 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'EDIBLE GUM - GOND KATIRA', brand: 'AKSHAR', packaging: '200 GM X 50 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'FLAX SEED (ALSI)', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'FLAX SEED (ALSI)', brand: 'AKSHAR', packaging: '200 GM X 50 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'FLAX SEED (ALSI)', brand: 'AKSHAR', packaging: '500 GM X 20 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/13.png' },
+                {
+                    name: 'FRIED ONION', brand: 'AKSHAR', packaging: '200 GM X 25 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GANTHODA POWDER (PEEPRAMUL POWDER)', brand: 'AKSHAR', packaging: '100 GM X 75 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GINGER POWDER (SONTH)', brand: 'AKSHAR', packaging: '400 GM X 20 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GUGAL', brand: 'AKSHAR', packaging: '100 GM X 30 PKT (Per Carton)', shelfLife: '24 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'HALON SEED (ASERIO SEED) GARDEN CRESS SEED', brand: 'AKSHAR', packaging: '100 GM X 100 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/19.jpg' },
+                {
+                    name: 'HORSE GRAM (KULTHI)', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'KAMARKAS POWDER', brand: 'AKSHAR', packaging: '100 GM X 80 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'KAMARKAS POWDER', brand: 'AKSHAR', packaging: '200 GM X 40 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'KAMARKAS WHOLE (BUTEA GUM)', brand: 'AKSHAR', packaging: '200 GM X 50 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'KATLU (BATRISHU) POWDER', brand: 'AKSHAR', packaging: '100 GM X 75 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'LONAVALA KOKAM', brand: 'AKSHAR', packaging: '100 GM X 50 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'MADRAS CURRY POWDER', brand: 'AKSHAR', packaging: '1 KG X 10 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'MADRAS CURRY POWDER', brand: 'AKSHAR', packaging: '400 GM X 20 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'PANCH PHORON', brand: 'AKSHAR', packaging: '100 GM X 84 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'POP CORN KERNELS', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/29.png' },
+                {
+                    name: 'POTATO KATRI RUFFLE', brand: 'AKSHAR', packaging: '200 GM X 20 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                }, ,
+                {
+                    name: 'ROASTED GRAM SPLIT (CHUTNEY DAL)', brand: 'AKSHAR', packaging: '20 KG X 1 BAG (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'SUPARI CHIPS ARECA NUTS (BETEL NUT)', brand: 'AKSHAR', packaging: '250 GM X 25 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/32.jpg' },
+                { name: 'SUPARI SLICES - ARECA NUTS (BETEL NUT)', brand: 'AKSHAR', packaging: '250 GM X 25 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/33.jpg' },
+                {
+                    name: 'TUTTI FRUTTI (GREEN)', brand: 'AKSHAR', packaging: '200 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'TUTTI FRUTTI (MIX COLOUR)', brand: 'AKSHAR', packaging: '200 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'TUTTI FRUTTI (RED)', brand: 'AKSHAR', packaging: '200 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'VEG. SOYA CHAAP', brand: 'AKSHAR', packaging: '800 GM X 12 TIN (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'WHOLE WHEAT', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'HEENA MEHENDI', brand: 'AYUR', packaging: '200 GM X 72 PKT (Per Carton)', shelfLife: '36 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'NATURAL HEENA POWDER', brand: 'AYUR', packaging: '160 GM X 72 PCS (Per Carton)', shelfLife: '36 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'BOURN VITA FILLS', brand: 'BOURN VITA', packaging: '18 GM X 150 PKT (Per Carton)', shelfLife: '6 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/41.jpg' },
+                { name: 'CHILLI VINGER', brand: 'CHINGS', packaging: '170 ML X 24 G.BOTT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/42.jpg' },
+                { name: 'GULABARI ZAIKA', brand: 'DABUR', packaging: '250 ML X 30 BOTT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/43.jpg' },
+                {
+                    name: 'BROOMS - SUPER SWEEP (PHULL ZHADU)', brand: 'FRISCH', packaging: '1 PCS X 50 PCS (Per Carton)', shelfLife: ' Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'COCONUT MILK POWDER', brand: 'MAGGI', packaging: '100 GM X 48 BOX (Per Carton)', shelfLife: '15 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'COCONUT MILK POWDER', brand: 'MAGGI', packaging: '25 GM X 240 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'DRY YEAST', brand: 'MOMENTS', packaging: '25 GM X 75 PKT (Per Carton)', shelfLife: '24 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/47.jpg' },
+                { name: 'AMLA CHATPATA CANDY', brand: 'PATANJALI', packaging: '500 GM X 24 BOTT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/48.jpg' },
+                { name: 'ASHVAGANDHA CAPSULE', brand: 'PATANJALI', packaging: '20 CAP X 120 PKT (Per Carton)', shelfLife: '24 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/49.jpg' },
+                { name: 'ASHVASHILA CAPSULE', brand: 'PATANJALI', packaging: '20 CAP X 120 PKT (Per Carton)', shelfLife: '24 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/50.jpg' },
+                { name: 'GULKAND', brand: 'PATANJALI', packaging: '400 GM X 24 BOTT (Per Carton)', shelfLife: '36 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/51.jpg' },
+                { name: 'PITAMBARI', brand: 'PITAMBARI', packaging: '100 GM X 120 PKT (Per Carton)', shelfLife: ' Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/52.jpg' },
+                {
+                    name: 'DALIA (BROKEN WHEAT)', brand: 'RAJDHANI', packaging: '500 GM X 40 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'RICE FLAKES THICK - POHA (COARSE FLAKES)', brand: 'RAJDHANI', packaging: '500 GM X 20 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'I - SHAKTI COOKING SODA', brand: 'TATA I-SHAKTI', packaging: '1 KG X 25 PKT (Per Carton)', shelfLife: '25 Months', subcategory: 'MISCELLANEOUS PRODUCTS', imageUrl: 'img/misc/55.jpg' },
+
+
+                // Add these products to your allProducts array in the script tag
+
+                {
+                    name: 'BLACK CHANA (DESI CHANA)', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'BLACK CHANA (KALA CHANA)', brand: 'AKSHAR', packaging: '1 KG X 13 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/2.jpg' },
+                { name: 'BLACK CHANA (KALA CHANA)', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/3.png' },
+                { name: 'BLACK EYE BEAN (WHITE LOBIA)', brand: 'AKSHAR', packaging: '1 KG X 13 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/4.jpg' },
+                { name: 'BLACK EYE BEAN (WHITE LOBIA)', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/5.png' },
+                { name: 'BLACK URAD SPLIT', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/6.jpg' },
+                {
+                    name: 'BLACK URAD SPLIT', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'BLACK URAD SPLIT', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/8.jpg' },
+                { name: 'BLACK URAD WHOLE', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/9.jpg' },
+                {
+                    name: 'BLACK URAD WHOLE', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'CHANA DAL', brand: 'AKSHAR', packaging: '1 KG X 13 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/11.png' },
+                {
+                    name: 'CHANA DAL', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'CHANA DAL', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/13.png' },
+                {
+                    name: 'GREEN CHICKPEAS (GREEN CHANA)', brand: 'AKSHAR', packaging: '1 KG X 13 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GREEN CHICKPEAS (GREEN CHANA)', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GREEN CHICKPEAS (GREEN CHANA)', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GREEN MOONG SPLIT', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GREEN MOONG SPLIT', brand: 'AKSHAR', packaging: '500 GM X 36 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GREEN MOONG WHOLE (BERKEN) LARGE', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'GREEN MOONG WHOLE (CELERA)', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'GREEN MOONG WHOLE (CELERA)', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/21.png' },
+                { name: 'GREEN PEAS', brand: 'AKSHAR', packaging: '1 KG X 13 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/22.jpg' },
+                { name: 'GREEN PEAS', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/23.jpg' },
+                { name: 'KABULI CHANA (CHICKPEAS)', brand: 'AKSHAR', packaging: '1 KG X 13 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/24.png' },
+                {
+                    name: 'KABULI CHANA (CHICKPEAS)', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'KABULI CHANA (CHICKPEAS)', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/26.png' },
+                { name: 'KIDNEY BEANS (RAJMA CHITRA)', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/27.jpg' },
+                { name: 'KIDNEY BEANS (RAJMA CHITRA)', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/28.png' },
+                { name: 'KIDNEY BEANS (RAJMA RED) DARK', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/29.jpg' },
+                { name: 'KIDNEY BEANS (RAJMA RED) DARK', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/30.png' },
+                {
+                    name: 'KIDNEY BEANS (RAJMA) LIGHT RED', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'KIDNEY BEANS RED DARK RAJMA', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'MASOOR WHOLE', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'MASOOR WHOLE', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'MOTH BEANS', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'MOTH BEANS', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'MOTH BEANS', brand: 'AKSHAR', packaging: '500 GM X 30 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/37.png' },
+                { name: 'PANCHRANGI DAL (MIXED LENTILS)', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/38.jpeg' },
+                { name: 'PANCHRANGI DAL (MIXED LENTILS)', brand: 'AKSHAR', packaging: '500 GM X 30 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/39.png' },
+                { name: 'RANGUNI VAL', brand: 'AKSHAR', packaging: '500 GM X 30 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/40.jpeg' },
+                {
+                    name: 'RED CHAWLI', brand: 'AKSHAR', packaging: '500 GM X 30 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'RED LENTILS SPLIT (MASOOR DAL)', brand: 'AKSHAR', packaging: '1 KG X 13 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/42.jpg' },
+                { name: 'RED LENTILS SPLIT (MASOOR DAL)', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/43.jpg' },
+                { name: 'ROASTED GRAM SPLIT (CHUTNEY DAL)', brand: 'AKSHAR', packaging: '1 KG X 10 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/44.jpg' },
+                { name: 'ROASTED GRAM SPLIT (CHUTNEY DAL)', brand: 'AKSHAR', packaging: '100 GM X 80 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/45.jpg' },
+                { name: 'ROASTED GRAM SPLIT (CHUTNEY DAL)', brand: 'AKSHAR', packaging: '2 Lbs X 10 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/46.jpg' },
+                {
+                    name: 'ROASTED GRAM SPLIT (CHUTNEY DAL)', brand: 'AKSHAR', packaging: '200 GM X 40 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'ROASTED GRAM SPLIT (CHUTNEY DAL)', brand: 'AKSHAR', packaging: '4 Lbs X 6 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'ROASTED GRAM SPLIT (CHUTNEY DAL)', brand: 'AKSHAR', packaging: '500 GM X 20 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/49.jpg' },
+                {
+                    name: 'SOYA BEANS', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'SOYA CHUNKS (SOYA WADI)', brand: 'AKSHAR', packaging: '1 KG X 20 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'SOYA CHUNKS (SOYA WADI)', brand: 'AKSHAR', packaging: '20 KG X 1 BAG (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'SOYA CHUNKS (SOYA WADI)', brand: 'AKSHAR', packaging: '200 GM X 30 PKT (Per Carton)', shelfLife: '18 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'SOYA CHUNKS (SOYA WADI)', brand: 'AKSHAR', packaging: '400 GM X 30 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'SOYA GRANULES', brand: 'AKSHAR', packaging: '200 GM X 40 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/55.jpg' },
+                { name: 'TOOR DAL', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/56.jpg' },
+                {
+                    name: 'TOOR DAL', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'TOOR DAL', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/58.jpg' },
+                { name: 'TOOR DAL (OILY)', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/59.jpg' },
+                { name: 'VAL WHOLE', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/60.jpg' },
+                {
+                    name: 'VAL WHOLE', brand: 'AKSHAR', packaging: '500 GM X 34 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'WHITE PEAS', brand: 'AKSHAR', packaging: '1 KG X 13 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                {
+                    name: 'WHITE PEAS', brand: 'AKSHAR', packaging: '500 GM X 30 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'WHITE URAD DAL', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/64.jpg' },
+                { name: 'WHITE URAD DAL', brand: 'AKSHAR', packaging: '500 GM X 34 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/65.jpg' },
+                { name: 'WHITE URAD WHOLE', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/66.jpg' },
+                {
+                    name: 'WHITE URAD WHOLE', brand: 'AKSHAR', packaging: '500 GM X 25 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'YELLOW MOONG DAL', brand: 'AKSHAR', packaging: '1 KG X 15 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/68.jpg' },
+                {
+                    name: 'YELLOW MOONG DAL', brand: 'AKSHAR', packaging: '2 KG X 8 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+                { name: 'YELLOW MOONG DAL', brand: 'AKSHAR', packaging: '500 GM X 30 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/70.jpg' },
+                { name: 'SOYA CHUNKS', brand: 'NUTRELA', packaging: '220 GM X 60 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/71.jpg' },
+                { name: 'SOYA GRANULES', brand: 'NUTRELA', packaging: '220 GM X 60 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: 'img/pulse/72.jpg' },
+                {
+                    name: 'SOYA MINI CHUNKS', brand: 'NUTRELA', packaging: '220 GM X 60 PKT (Per Carton)', shelfLife: '12 Months', subcategory: 'PULSES & BEANS', imageUrl: null, // Set imageUrl to null
+                    displayText: 'NO IMAGE'
+                },
+
+                // Add these products to your allProducts array in the script tag
+
+                { name: 'HONEY', brand: 'DABUR', packaging: '1.2 KG X 9 BOTT (Per Carton)', shelfLife: '18 Months', subcategory: 'HONEY', imageUrl: '' },
+                { name: 'HONEY', brand: 'DABUR', packaging: '130 GM X 72 BOTT (Per Carton)', shelfLife: '18 Months', subcategory: 'HONEY', imageUrl: '' },
+                { name: 'HONEY', brand: 'DABUR', packaging: '250 GM X 36 BOTT (Per Carton)', shelfLife: '18 Months', subcategory: 'HONEY', imageUrl: '' },
+                { name: 'HONEY', brand: 'DABUR', packaging: '600 GM X 16 BOTT (Per Carton)', shelfLife: '18 Months', subcategory: 'HONEY', imageUrl: '' },
+                { name: 'HONEY', brand: 'DABUR', packaging: '600 GM X 16 BOTT (Per Carton)', shelfLife: '18 Months', subcategory: 'HONEY', imageUrl: '' },
+                { name: 'JANMA GHUNTI HONEY', brand: 'DABUR', packaging: '125 ML X 48 PCS (Per Carton)', shelfLife: '36 Months', subcategory: 'HONEY', imageUrl: '' },
+                { name: 'HONEY', brand: 'PATANJALI', packaging: '250 ML X 40 P.BOTT (Per Carton)', shelfLife: '12 Months', subcategory: 'HONEY', imageUrl: '' },
+                { name: 'HONEY', brand: 'PATANJALI', packaging: '500 GM X 20 P.JAR (Per Carton)', shelfLife: '12 Months', subcategory: 'HONEY', imageUrl: '' },
             ];
 
             // --- ICONS ---
@@ -629,6 +966,13 @@
                 const productGrid = document.getElementById('product-grid');
                 const productListTitle = document.getElementById('product-list-title');
                 const loadMoreBtn = document.getElementById('load-more-btn');
+
+                // --- START: New variables for hamburger menu ---
+                const hamburgerBtn = document.getElementById('hamburger-btn');
+                const closeSidebarBtn = document.getElementById('close-sidebar-btn');
+                const sidebar = document.querySelector('aside');
+                const sidebarOverlay = document.getElementById('sidebar-overlay');
+                // --- END: New variables for hamburger menu ---
 
                 let activeSubcategory = null;
                 let visibleProductCount = 6;
@@ -652,33 +996,26 @@
                         const productCard = document.createElement('div');
                         productCard.className = 'border border-gray-200 rounded-lg p-4 flex flex-col text-left hover:shadow-xl transition-shadow duration-300';
 
-                        // --- START OF CHANGE ---
-
                         let imageAreaHTML = '';
-                        // If there's an imageUrl, show the image
                         if (product.imageUrl) {
-                            imageAreaHTML = `<img src="${product.imageUrl}" alt="${product.name}" class="w-40 h-40 object-contain mb-4 self-center" onerror="this.src='https.placehold.co/400x400/f0f0f0/333333?text=Image+Not+Found'">`;
-                        }
-                        // Otherwise, if there's displayText, show that instead
-                        else if (product.displayText) {
+                            imageAreaHTML = `<img src="${product.imageUrl}" alt="${product.name}" class="w-40 h-40 object-contain mb-4 self-center" onerror="this.src='https://placehold.co/400x400/f0f0f0/333333?text=Image+Not+Found'">`;
+                        } else if (product.displayText) {
                             imageAreaHTML = `
-                <div class="w-40 h-40 flex items-center justify-center bg-gray-100 rounded-md mb-4 self-center p-2">
-                    <p class="text-center font-bold text-lg text-[#1E4B9C]">${product.displayText}</p>
-                </div>
-            `;
+                        <div class="w-40 h-40 flex items-center justify-center bg-gray-100 rounded-md mb-4 self-center p-2">
+                            <p class="text-center font-bold text-lg text-[#1E4B9C]">${product.displayText}</p>
+                        </div>
+                    `;
                         }
 
                         productCard.innerHTML = `
-            ${imageAreaHTML}
-            <div class="flex-grow">
-                <h3 class="font-bold text-md text-gray-800">${product.name}</h3>
-                <p class="text-sm text-gray-600 mt-2"><span class="font-semibold">Brand:</span> ${product.brand}</p>
-                <p class="text-sm text-gray-600 mt-1"><span class="font-semibold">Packaging:</span> ${product.packaging}</p>
-                <p class="text-sm text-gray-600 mt-1"><span class="font-semibold">Shelf Life:</span> ${product.shelfLife}</p>
-            </div>
-        `;
-                        // --- END OF CHANGE ---
-
+                    ${imageAreaHTML}
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-md text-gray-800">${product.name}</h3>
+                        <p class="text-sm text-gray-600 mt-2"><span class="font-semibold">Brand:</span> ${product.brand}</p>
+                        <p class="text-sm text-gray-600 mt-1"><span class="font-semibold">Packaging:</span> ${product.packaging}</p>
+                        <p class="text-sm text-gray-600 mt-1"><span class="font-semibold">Shelf Life:</span> ${product.shelfLife}</p>
+                    </div>
+                `;
                         productGrid.appendChild(productCard);
                     });
 
@@ -695,20 +1032,20 @@
                     li.className = "text-gray-700";
 
                     let categoryHTML = `
-                    <div class="category-item flex justify-between items-center p-2 rounded-md hover:bg-gray-100 cursor-pointer">
-                        <div class="flex items-center gap-3">
-                            <span class="text-[#1E4B9C]">${icons.home}</span>
-                            <span class="font-semibold text-sm">${category.name}</span>
+                        <div class="category-item flex justify-between items-center p-2 rounded-md hover:bg-gray-100 cursor-pointer">
+                            <div class="flex items-center gap-3">
+                                <span class="text-[#1E4B9C]">${icons.home}</span>
+                                <span class="font-semibold text-sm">${category.name}</span>
+                            </div>
+                            <span class="chevron-icon">${icons.chevron}</span>
                         </div>
-                        <span class="chevron-icon">${icons.chevron}</span>
-                    </div>
-                `;
+                    `;
 
                     const subcategoryList = category.subcategories.map(sub => `
-                    <li class="subcategory-item pl-8 py-1.5 text-sm hover:text-[#FF6B35] cursor-pointer" data-subcategory="${sub}">
-                        ${sub}
-                    </li>
-                `).join('');
+                        <li class="subcategory-item pl-8 py-1.5 text-sm hover:text-[#FF6B35] cursor-pointer" data-subcategory="${sub}">
+                            ${sub}
+                        </li>
+                    `).join('');
                     categoryHTML += `<ul class="subcategory-list ml-4 mt-1 space-y-1">${subcategoryList}</ul>`;
 
                     li.innerHTML = categoryHTML;
@@ -727,6 +1064,16 @@
                     });
                 });
 
+                // --- START: New function to close the mobile menu ---
+                const closeMenu = () => {
+                    if (sidebar && sidebarOverlay) {
+                        sidebar.classList.add('-translate-x-full');
+                        sidebar.classList.remove('translate-x-0');
+                        sidebarOverlay.classList.add('hidden');
+                    }
+                };
+                // --- END: New function to close the mobile menu ---
+
                 document.querySelectorAll('.subcategory-item').forEach(item => {
                     item.addEventListener('click', (e) => {
                         e.stopPropagation();
@@ -739,7 +1086,8 @@
                         renderProducts();
                         productListTitle.innerHTML = `<span style="color: white;">Showing results for "${activeSubcategory}"</span>`;
 
-
+                        // --- Close the menu after selecting a category on mobile ---
+                        closeMenu();
                     });
                 });
 
@@ -747,6 +1095,21 @@
                     visibleProductCount += productsPerLoad;
                     renderProducts();
                 });
+
+
+                // --- START: Add event listeners for hamburger menu ---
+                if (hamburgerBtn && sidebar && closeSidebarBtn && sidebarOverlay) {
+                    hamburgerBtn.addEventListener('click', () => {
+                        sidebar.classList.remove('-translate-x-full');
+                        sidebar.classList.add('translate-x-0');
+                        sidebarOverlay.classList.remove('hidden');
+                    });
+
+                    closeSidebarBtn.addEventListener('click', closeMenu);
+                    sidebarOverlay.addEventListener('click', closeMenu);
+                }
+                // --- END: Add event listeners for hamburger menu ---
+
 
                 // 3. Initial Render State
                 const setDefaultState = () => {
@@ -759,8 +1122,12 @@
                             if (firstSubcategoryName) {
                                 const firstSubcategoryElement = sublist.querySelector(`[data-subcategory="${firstSubcategoryName}"]`);
                                 if (firstSubcategoryElement) {
-                                    categoryItem.click(); // Open main category
-                                    firstSubcategoryElement.click(); // Select first subcategory
+                                    // Don't auto-click the category item on page load, just select the subcategory for initial display
+                                    sublist.classList.add('open');
+                                    if (categoryItem.querySelector('.chevron-icon svg')) {
+                                        categoryItem.querySelector('.chevron-icon svg').classList.add('rotate-180');
+                                    }
+                                    firstSubcategoryElement.click();
                                 }
                             }
                         }
