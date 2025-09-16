@@ -1,0 +1,642 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ravel Exports Ltd. - Global Presence</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="images/Logo/favicon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/dripicons.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/meanmenu.css">
+    <link rel="stylesheet" href="css/default.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .map-section-container {
+            max-width: 1400px;
+            margin: 60px auto;
+            text-align: center;
+            padding: 0 20px;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #f0f0f0;
+        }
+
+        .map-header {
+            padding: 60px 20px 40px 20px;
+            background: linear-gradient(135deg, #1E4B9C 0%, #ff7d44 100%);
+            border-radius: 20px 20px 0 0;
+            margin: -1px -1px 60px -1px;
+        }
+
+        .map-header h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+            color: #ffffff;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: relative;
+        }
+
+        .map-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: #ffffff;
+            border-radius: 2px;
+        }
+
+        .map-header .description {
+            font-size: clamp(0.95rem, 2vw, 1.1rem);
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 900px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        .map-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #f0f0f0;
+        }
+
+        .world-map-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: contrast(1.1) saturate(1.2);
+        }
+
+        .location-marker {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .location-marker::after {
+            content: '';
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #ff7d44, #1E4B9C);
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(255, 125, 68, 0.3);
+            transform: translate(-50%, -50%);
+            transition: none;
+        }
+
+        .location-marker:hover::after {
+            transform: translate(-50%, -50%);
+            box-shadow: 0 2px 8px rgba(255, 125, 68, 0.3);
+        }
+
+        .info-box {
+            position: absolute;
+            background: #ffffff;
+            border: 2px solid #1E4B9C;
+            border-radius: 12px;
+            padding: 12px;
+            width: 220px;
+            text-align: left;
+            font-size: 0.75rem;
+            line-height: 1.4;
+            z-index: 20;
+            box-shadow: 0 8px 20px rgba(30, 75, 156, 0.15);
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+
+        .info-box::before {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .country-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #ff7d44;
+            color: #1E4B9C;
+            display: flex;
+            align-items: center;
+        }
+
+        .country-name::before {
+            content: '📍';
+            margin-right: 6px;
+            font-size: 1rem;
+        }
+
+        .info-box b {
+            color: #1E4B9C;
+            font-weight: 600;
+        }
+
+        /* Positioning for each location */
+        .usa-marker {
+            top: 38%;
+            left: 20%;
+        }
+
+        .usa-marker .info-box {
+            top: -120px;
+            left: -30px;
+        }
+
+        .usa-marker .info-box::before {
+            bottom: -12px;
+            left: 40px;
+            border: 12px solid transparent;
+            border-top-color: #ffffff;
+        }
+
+        .uk-marker {
+            top: 29%;
+            left: 47%;
+        }
+
+        .uk-marker .info-box {
+            bottom: 35px;
+            left: -90px;
+        }
+
+        .uk-marker .info-box::before {
+            top: -12px;
+            left: 100px;
+            border: 12px solid transparent;
+            border-bottom-color: #ffffff;
+        }
+
+        .dubai-marker {
+            top: 48%;
+            left: 59%;
+        }
+
+        .dubai-marker .info-box {
+            top: -100px;
+            left: -230px;
+        }
+
+        .dubai-marker .info-box::before {
+            bottom: -12px;
+            right: 20px;
+            border: 12px solid transparent;
+            border-top-color: #ffffff;
+        }
+
+        .india-marker {
+            top: 41%;
+            left: 68%;
+        }
+
+        .india-marker .info-box {
+            top: -140px;
+            left: -100px;
+        }
+
+        .india-marker .info-box::before {
+            bottom: -12px;
+            left: 130px;
+            border: 12px solid transparent;
+            border-top-color: #ffffff;
+        }
+
+        .australia-marker {
+            top: 76%;
+            left: 81%;
+        }
+
+        .australia-marker .info-box {
+            top: -110px;
+            left: -230px;
+        }
+
+        .australia-marker .info-box::before {
+            bottom: -12px;
+            right: 20px;
+            border: 12px solid transparent;
+            border-top-color: #ffffff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .map-section-container {
+                margin: 20px;
+            }
+
+            .info-box {
+                width: 200px;
+                font-size: 0.7rem;
+                padding: 10px;
+            }
+
+            .country-name {
+                font-size: 0.85rem;
+                margin-bottom: 6px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .map-section-container {
+                margin: 15px;
+                border-radius: 15px;
+            }
+
+            .map-header {
+                padding: 40px 15px 30px 15px;
+                border-radius: 15px 15px 0 0;
+                margin-bottom: 40px;
+            }
+
+            .map-header h1 {
+                letter-spacing: 2px;
+                margin-bottom: 20px;
+            }
+
+            .info-box {
+                width: 180px;
+                font-size: 0.65rem;
+                padding: 8px;
+                position: fixed !important;
+                top: auto !important;
+                bottom: 20px !important;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                z-index: 1000;
+                display: none;
+            }
+
+            .info-box::before {
+                display: none;
+            }
+
+            .location-marker:hover .info-box,
+            .location-marker:focus .info-box,
+            .location-marker:active .info-box {
+                display: block !important;
+            }
+
+            .location-marker {
+                width: 20px;
+                height: 20px;
+            }
+
+            .location-marker::after {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .map-section-container {
+                padding: 0 10px;
+            }
+
+            .map-header {
+                padding: 30px 10px 25px 10px;
+            }
+
+            .info-box {
+                width: 160px;
+                font-size: 0.6rem;
+                padding: 6px;
+            }
+
+            .country-name {
+                font-size: 0.75rem;
+                margin-bottom: 4px;
+            }
+        }
+
+        /* Enhanced footer styling */
+    </style>
+</head>
+
+<body>
+    <header class="header-area header">
+        <div id="header-sticky" class="menu-area">
+            <div class="container-fluid pl-120 pr-120">
+                <div class="second-menu">
+                    <div class="row align-items-center">
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo">
+                                <a href="index.html">
+                                    <img src="images/Logo/logo-1.png" alt="logo" style="width:60%; height:auto;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7">
+                            <div class="main-menu text-right">
+                                <nav id="mobile-menu">
+                                    <ul>
+                                        <li class="has-sub">
+                                            <a href="index.html">Home</a>
+                                        </li>
+                                        <li><a href="about.html">About Us</a></li>
+                                        <li class="has-sub">
+                                            <a href="product.html">Products </a>
+                                            <ul class="products-submenu">
+                                                <li><a>Vegetables</a></li>
+                                                <li><a>Fruits</a></li>
+                                                <li><a>Pulp and concentrate</a></li>
+                                                <li><a>Food grains</a></li>
+                                                <li><a>Basmati rice</a></li>
+                                                <li><a>Rice</a></li>
+                                                <li><a>Wheat atta</a></li>
+                                                <li><a>Self packaged atta</a></li>
+                                                <li><a>Besan</a></li>
+                                                <li><a>Papads</a></li>
+                                                <li><a>Whole spices</a></li>
+                                                <li><a>Tea</a></li>
+                                                <li><a>Biscuits & Cookies</a></li>
+                                                <li><a>Beverages</a></li>
+                                                <li><a>Chips</a></li>
+                                                <li><a>Sweets</a></li>
+                                                <li><a>Pickles</a></li>
+                                                <li><a>Coffee</a></li>
+                                                <li><a>Cosmetics & Toiletries</a></li>
+                                                <li><a href="contact.html">Earthenware</a></li>
+                                                <li><a>Groceries</a></li>
+                                                <li><a>Salt</a></li>
+                                                <li><a>Ground spices</a></li>
+                                                <li><a>Mukhwas</a></li>
+                                                <li><a>Namkeen</a></li>
+                                                <li><a>Puja & Festival</a></li>
+                                                <li><a>Ready to eat</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-sub">
+                                            <a href="services.html">Services</a>
+                                        </li>
+                                        <li><a href="brands.html">Brands</a></li>
+                                        <li><a href="contact.html">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile-menu"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="offcanvas-menu">
+        <span class="menu-close"><i class="fas fa-times"></i></span>
+        <form role="search" method="get" id="searchform" class="searchform"
+            action="http://wordpress.zcube.in/xconsulta/">
+            <input type="text" name="s" id="search" placeholder="Search" />
+            <button><i class="fa fa-search"></i></button>
+        </form>
+        <div id="cssmenu3" class="menu-one-page-menu-container">
+            <ul class="menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="index.html">Home</a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="about.html">About Us</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="product.html">Products</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="services.html">Services</a>
+                </li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="">FAQs </a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="contact.html">Contact
+                        us</a></li>
+            </ul>
+        </div>
+        <div id="cssmenu2" class="menu-one-page-menu-container">
+            <ul id="menu-one-page-menu-12" class="menu">
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a href="#home"><span>+8 12
+                            3456897</span></a></li>
+                <li class="menu-item menu-item-type-custom menu-item-object-custom"><a
+                        href="#howitwork"><span>info@example.com</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="offcanvas-overly"></div>
+
+    <main>
+        <div class="map-section-container">
+            <div class="map-header">
+                <h1>GLOBAL PRESENCE</h1>
+                <p class="description">
+                    Ready to explore how Raval Group can empower your business? Get in touch with us today to learn more
+                    about our comprehensive B2B and export solutions. Our team is eager to answer your questions and
+                    discuss how we can help you achieve your business goals. We believe in building lasting
+                    relationships with our clients, providing them with the support they need to succeed in the global
+                    marketplace.
+                </p>
+            </div>
+
+            <div class="map-container">
+                <img src="img/map.png" alt="World Map of Global Presence" class="world-map-image">
+
+                <div class="location-marker usa-marker">
+                    <div class="info-box">
+                        <div class="country-name">USA</div>
+                        <b>Corporate office - RAVAL TRADING COMPANY</b><br>
+                        USA INC68 MONICA WAY MONMOUTH JCT, NJ 08852<br><br>
+                        <b>Branch Office - JMR DISTRIBUTORS LLC</b><br>
+                        6 Princess Rd Unit 2, Trenton NJ 08648
+                    </div>
+                </div>
+
+                <div class="location-marker uk-marker">
+                    <div class="info-box">
+                        <div class="country-name">UNITED KINGDOM</div>
+                        <b>JR Distributors Limited</b><br>
+                        71-75 SHELTON STREET, COVENT GARDEN<br>
+                        LONDON, WC2H9JQ UNITED KINGDOM
+                    </div>
+                </div>
+
+                <div class="location-marker dubai-marker">
+                    <div class="info-box">
+                        <div class="country-name">DUBAI</div>
+                        <b>RTC GENERAL TRADING LLC</b><br>
+                        Meydan grandstand, 6th Floor<br>
+                        Meydan Road, Nad Alysheba Dubai UAE
+                    </div>
+                </div>
+
+                <div class="location-marker india-marker">
+                    <div class="info-box">
+                        <div class="country-name">INDIA</div>
+                        <b>Head Office Mumbai</b><br>
+                        Raval House, D-304, TTC Industrial Area<br>
+                        Turbhe MIDC, Navi Mumbai - 400705<br><br>
+                        <b>Branch Office AHMEDABAD</b> - SANTEJ - 382721<br>
+                        <b>RAJKOT</b> - PLOT NO.1, AVADH INDUSTRIAL PARK - 360003<br>
+                        <b>GOA</b> - 408, Grand Imperium, Panjim - 403001
+                    </div>
+                </div>
+
+                <div class="location-marker australia-marker">
+                    <div class="info-box">
+                        <div class="country-name">AUSTRALIA</div>
+                        <b>R & Y Imports</b><br>
+                        34 Topal Drive<br>
+                        Officer, Melbourne
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer class="footer-bg footer-p">
+            <div class="footer-top  pt-90 pb-40" style="background: linear-gradient(135deg, #d3d3d3, #a9a9a9);">
+                <div class="container">
+                    <div class="row justify-content-between">
+
+
+                        <div class="col-xl-4 col-lg-4 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title mb-30">
+                                    <img src="images/Logo/logo-1.png" alt="img">
+                                </div>
+                                <div class="f-contact">
+                                    <ul>
+                                        <li>
+                                            <i class="icon fal fa-map-marker-check"></i>
+                                            <span>TTC IND. AREA, D-304, Turbhe MIDC, Turbhe, Navi Mumbai,
+                                                Maharashtra 400703</span>
+                                        </li>
+                                        <li>
+                                            <i class="icon fal fa-phone"></i>
+                                            <span>+91-9819607311</span>
+                                        </li>
+                                        <li><i class="icon fal fa-envelope"></i>
+                                            <span>
+                                                <a href="mailto:info@example.com">info@example.com</a>
+                                                <br>
+                                                <a href="mailto:help@example.com">help@example.com</a>
+                                            </span>
+                                        </li>
+
+
+                                    </ul>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title">
+                                    <h2>Our Links</h2>
+                                </div>
+                                <div class="footer-link">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li><a href="about.html"> About Us</a></li>
+                                        <li><a href="services.html"> Services </a></li>
+                                        <li><a href="contact.html"> Contact Us</a></li>
+                                        <li><a href="blog.html">Blog </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-lg-3 col-sm-6">
+                            <div class="footer-widget mb-30">
+                                <div class="f-widget-title">
+                                    <h2>Subscribe Now ! </h2>
+                                </div>
+                                <div class="footer-link">
+                                    <div class="subricbe p-relative" data-animation="fadeInDown" data-delay=".4s">
+                                        <form action="https://htmldemo.zcubethemes.com/logista/news-mail.php"
+                                            method="post" class="contact-form ">
+                                            <input type="text" id="email2" name="email2" class="header-input"
+                                                placeholder="Your Email..." required>
+                                            <button class="btn header-btn"> <i class="fas fa-location-arrow"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="footer-social mt-30">
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-wrap">
+                <div class="container">
+                    <div class="row align-items-center text-center">
+                        <div class="col-lg-12 col-md-12">
+                            Copyright &copy; Raval Exports 2025. All rights reserved.
+                            <br>
+                            Made by <a href="https://www.rvnetworking.com/" target="_blank">RV Networking</a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/ajax-form.js"></script>
+    <script src="js/paroller.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/js_isotope.pkgd.min.js"></script>
+    <script src="js/imagesloaded.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+    <script src="js/jquery.meanmenu.min.js"></script>
+    <script src="js/parallax-scroll.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/element-in-view.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

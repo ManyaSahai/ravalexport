@@ -6120,7 +6120,7 @@ section:hover .section-title h2::before {
 }
 .f-contact .icon {
   float: left;
-  margin-top: 7px;
+  margin-top: -8px;
   margin-right: 15px;
   width: 40px;
 }
