@@ -120,11 +120,6 @@
             transition: none;
         }
 
-        .location-marker:hover::after {
-            transform: translate(-50%, -50%);
-            box-shadow: 0 2px 8px rgba(255, 125, 68, 0.3);
-        }
-
         .info-box {
             position: absolute;
             background: #ffffff;
@@ -137,9 +132,6 @@
             line-height: 1.4;
             z-index: 20;
             box-shadow: 0 8px 20px rgba(30, 75, 156, 0.15);
-            opacity: 1;
-            transform: translateY(0);
-            transition: all 0.3s ease;
             font-weight: 400;
         }
 
@@ -173,22 +165,10 @@
             font-weight: 600;
         }
 
-        /* Positioning for each location */
+        /* DESKTOP Positioning for each location */
         .usa-marker {
             top: 38%;
             left: 20%;
-        }
-
-        .usa-marker .info-box {
-            top: -120px;
-            left: -30px;
-        }
-
-        .usa-marker .info-box::before {
-            bottom: -12px;
-            left: 40px;
-            border: 12px solid transparent;
-            border-top-color: #ffffff;
         }
 
         .uk-marker {
@@ -196,33 +176,9 @@
             left: 47%;
         }
 
-        .uk-marker .info-box {
-            bottom: 35px;
-            left: -90px;
-        }
-
-        .uk-marker .info-box::before {
-            top: -12px;
-            left: 100px;
-            border: 12px solid transparent;
-            border-bottom-color: #ffffff;
-        }
-
         .dubai-marker {
             top: 48%;
             left: 59%;
-        }
-
-        .dubai-marker .info-box {
-            top: -100px;
-            left: -230px;
-        }
-
-        .dubai-marker .info-box::before {
-            bottom: -12px;
-            right: 20px;
-            border: 12px solid transparent;
-            border-top-color: #ffffff;
         }
 
         .india-marker {
@@ -230,21 +186,30 @@
             left: 68%;
         }
 
-        .india-marker .info-box {
-            top: -140px;
-            left: -100px;
-        }
-
-        .india-marker .info-box::before {
-            bottom: -12px;
-            left: 130px;
-            border: 12px solid transparent;
-            border-top-color: #ffffff;
-        }
-
         .australia-marker {
             top: 76%;
             left: 81%;
+        }
+
+        /* DESKTOP Info box positions */
+        .usa-marker .info-box {
+            top: -120px;
+            left: -30px;
+        }
+
+        .uk-marker .info-box {
+            bottom: 35px;
+            left: -90px;
+        }
+
+        .dubai-marker .info-box {
+            top: -100px;
+            left: -230px;
+        }
+
+        .india-marker .info-box {
+            top: -140px;
+            left: -100px;
         }
 
         .australia-marker .info-box {
@@ -252,104 +217,55 @@
             left: -230px;
         }
 
-        .australia-marker .info-box::before {
-            bottom: -12px;
-            right: 20px;
-            border: 12px solid transparent;
-            border-top-color: #ffffff;
+        .info-box::before {
+            display: none;
         }
 
-        /* Responsive Design */
-        @media (max-width: 1200px) {
-            .map-section-container {
-                margin: 20px;
-            }
+        /* Hide arrows by default for simplicity */
 
-            .info-box {
-                width: 200px;
-                font-size: 0.7rem;
-                padding: 10px;
-            }
 
-            .country-name {
-                font-size: 0.85rem;
-                margin-bottom: 6px;
-            }
-        }
-
+        /* --- MOBILE VIEW: HIDE MAP, SHOW LIST --- */
         @media (max-width: 768px) {
-            .map-section-container {
-                margin: 15px;
-                border-radius: 15px;
-            }
-
-            .map-header {
-                padding: 40px 15px 30px 15px;
-                border-radius: 15px 15px 0 0;
-                margin-bottom: 40px;
-            }
-
-            .map-header h1 {
-                letter-spacing: 2px;
+            .map-container {
+                /* Remove the container styling */
+                border: none;
+                box-shadow: none;
+                background: transparent;
                 margin-bottom: 20px;
+                overflow: visible;
             }
 
-            .info-box {
-                width: 180px;
-                font-size: 0.65rem;
-                padding: 8px;
-                position: fixed !important;
-                top: auto !important;
-                bottom: 20px !important;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                z-index: 1000;
+            .world-map-image {
+                /* Hide the map image */
                 display: none;
-            }
-
-            .info-box::before {
-                display: none;
-            }
-
-            .location-marker:hover .info-box,
-            .location-marker:focus .info-box,
-            .location-marker:active .info-box {
-                display: block !important;
             }
 
             .location-marker {
-                width: 20px;
-                height: 20px;
+                /* Convert marker divs into static list items */
+                position: static;
+                width: 100%;
+                height: auto;
+                margin-bottom: 15px;
+                /* Space between each location card */
             }
 
             .location-marker::after {
-                width: 16px;
-                height: 16px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .map-section-container {
-                padding: 0 10px;
-            }
-
-            .map-header {
-                padding: 30px 10px 25px 10px;
+                /* Hide the dots */
+                display: none;
             }
 
             .info-box {
-                width: 160px;
-                font-size: 0.6rem;
-                padding: 6px;
-            }
-
-            .country-name {
-                font-size: 0.75rem;
-                margin-bottom: 4px;
+                /* Make the info box a full-width card */
+                position: static;
+                display: block;
+                width: 100%;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+                /* Add shadow to each card */
+                text-align: left;
+                padding: 15px;
+                font-size: 0.9rem;
             }
         }
-
-        /* Enhanced footer styling */
     </style>
 </head>
 
